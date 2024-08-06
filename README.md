@@ -8,9 +8,9 @@
 
 **스터디 구성원**
 
-| [damdam6](https://github.com/damdam6) | [dolmeengii](https://github.com/dolmeengii) | [Gardener-soul](https://github.com/Gardener-soul) | [olrlozl](https://github.com/olrlozl) | [h103906](https://github.com/h103906) |
+| [damdam6](https://github.com/damdam6) | [dolmeengii](https://github.com/dolmeengii) | [Gardener-soul](https://github.com/Gardener-soul) | [olrlozl](https://github.com/olrlozl) | [bloblog](https://github.com/bloblog) |
 |:---:|:---:|:---:|:---:|:---:|
-| <img alt="damdam6" src="https://github.com/damdam6.png" width="230" height="100%"/> | <img alt="dolmeengii" src="https://github.com/dolmeengii.png" width="230" height="100%"/> | <img alt="Gardener-soul" src="https://github.com/Gardener-soul.png" width="230" height="100%"/> | <img alt="olrlozl" src="https://github.com/olrlozl.png" width="230" height="100%"/> | <img alt="h103906" src="https://github.com/h103906.png" width="230" height="100%"/> |
+| <img alt="damdam6" src="https://github.com/damdam6.png" width="230" height="100%"/> | <img alt="dolmeengii" src="https://github.com/dolmeengii.png" width="230" height="100%"/> | <img alt="Gardener-soul" src="https://github.com/Gardener-soul.png" width="230" height="100%"/> | <img alt="olrlozl" src="https://github.com/olrlozl.png" width="230" height="100%"/> | <img alt="bloblog" src="https://github.com/bloblog.png" width="230" height="100%"/> |
 
 
 <br>
