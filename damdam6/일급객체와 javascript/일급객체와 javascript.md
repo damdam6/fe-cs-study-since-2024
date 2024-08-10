@@ -19,10 +19,7 @@
     3. All items can be the subject of assignment statements
         
         할당문의 대상이 될 수 있다. (변수 등에 할당할 수  있다.)
-        
-    4. All items can be tested for equality
-        
-        서로 같은지 비교할 수 있다.
+
         
 
 ### 일급 객체와 일급 함수
