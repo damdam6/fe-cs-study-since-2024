@@ -35,7 +35,7 @@ let promise = new Promise(function (resolve, reject) {
 - `result` → undefined, (resolve 호출 시) value, (reject 호출 시) error 값을 가진다.
 - 이들은 직접 접근하지 못하며, then, catch, finally 메서드로만 접근 가능하다. 아래 [Promise 객체 활용하기](#promise-객체-활용하기)에 다시 등장할 예정!
 
-![image.png](/bloblog/promise/image/image.png)
+![image](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week02/bloblog/promise/image/image.png?raw=true)
 
 ### 예제
 
