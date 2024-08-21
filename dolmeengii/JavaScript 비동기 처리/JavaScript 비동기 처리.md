@@ -15,7 +15,7 @@
 JavaScript는 싱글 스레드이다. 즉, 하나의 일을 할 때 하나밖에 못하는 동기 언어이다. 순차적으로 일을 할 때에 만약, 지금 수행하는 일이 오래 걸린다면 다른 작업들은 지금의 작업이 완료될 때까지 기다려야 한다. 이러한 문제점을 해결하기 위해 비동기로 일을 수행하게 된다.   
 |동기|비동기|
 |:--:|:--:|
-|![img](/image/sync.png)|![img](/image/async.png)|
+|![img](./image/sync.png)|![img](./image/async.png)|
 
 
 **❗JavaScript는 동기 언어라고 했는데 어떻게 비동기로 일을 수행할 수 있다는 것일까?**   
@@ -62,9 +62,9 @@ B-1...
 Call Stack을 살펴보자.   
 | | |
 |:--:|:--:|
-|![img](/image/fourth.png)|![img](/image/first.png)|
+|![img](./image/fourth.png)|![img](./image/first.png)|
 | | |
-|![img](/image/second.png)|![img](/image/third.png)|
+|![img](./image/second.png)|![img](./image/third.png)|
 
 1️. 가장 먼저 CallStack에 쌓이는 것은 실행문 `A();` 이다.   
 2-3. 함수 A()의 코드의 순서에 따라 `console.log('A-1...');` 이 쌓이고, 실행되어 CallStack에서 사라진다.   
