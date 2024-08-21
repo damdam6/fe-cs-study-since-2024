@@ -221,11 +221,11 @@
 - 마이크로태스크 큐는 먼저 들어온 작업을 먼저 실행한다. (FIFO)
 - 실행할 게 아무것도 없을 때만 마이크로태스크 큐에 있는 작업이 실행되기 시작한다.
 
-### 마이크로태스크 큐와 태스크 큐
-
-태스크 큐보다 마이크로태스크 큐가 더 우선순위가 높다.
-
-![image.gif]()
+> +) 마이크로태스크 큐와 태스크 큐
+>
+> 태스크 큐보다 마이크로태스크 큐가 더 우선순위가 높다.
+>
+> ![image.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week03/bloblog/promise%20%EC%8B%AC%ED%99%94/image/image.gif?raw=true)
 
 - 예제
 
