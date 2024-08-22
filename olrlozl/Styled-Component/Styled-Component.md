@@ -76,8 +76,8 @@ const Button = styled.button`
 function App () {
 	return(
 	    <div>
-			  <Button>Normal</Button>
-		    <Button $primary>Primary</Button>
+		<Button>Normal</Button>
+		<Button $primary>Primary</Button>
 	    </div>
 	)
 }
@@ -114,15 +114,15 @@ const Button = styled.button`
 `;
 
 const TomatoButton = styled(Button)`
-  color: 'red';
-  border-color: 'red';
+  color: tomato;
+  border-color: tomato;
 `;
 
 function App () {
 	return(
 	    <div>
-			  <Button>Normal Button</Button>
-		    <TomatoButton>Tomato Button</TomatoButton>
+		<Button>Normal Button</Button>
+		<TomatoButton>Tomato Button</TomatoButton>
 	    </div>
 	)
 }
@@ -152,8 +152,8 @@ const Button = styled.button`
 function App () {
 	return(
 	    <div>
-			  <Button>Normal Button</Button>
-        <Button as="a" href="#">Link with Button styles</Button>
+		<Button>Normal Button</Button>
+		<Button as="a" href="#">Link with Button styles</Button>
 	    </div>
 	)
 }
@@ -163,3 +163,127 @@ export default App;
 
 - `as` prop은 컴포넌트의 스타일을 재사용하면서도, 컴포넌트의 HTML 태그를 동적으로 변경할 수 있게 해준다.
 - 같은 스타일을 다양한 HTML 요소에 적용할 수 있으므로, 코드 중복을 줄이고 스타일의 일관성을 유지할 수 있다.
+
+### 5. 가상 요소, 가상 선택자 적용하기
+
+```jsx
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  color: black;
+
+  &::before {
+    content: "→";
+  }
+
+  &:hover {
+    color: red;
+  }
+`;
+
+function App() {
+  return <StyledButton>Hover Me</StyledButton>;
+}
+
+export default App;
+```
+
+- `&`는 **현재 컴포넌트**를 참조하는 선택자로, 스타일이 적용될 요소를 기준으로 추가 스타일을 정의할 때 사용한다.
+
+### 6. 중첩 스타일링하기
+
+```jsx
+import styled from "styled-components";
+
+const Card = styled.div`
+  background-color: white;
+
+  h1 {
+    font-size: 18px;
+    color: #333;
+  }
+
+  p {
+    font-size: 15px;
+    color: #666;
+  }
+`;
+
+function App() {
+  return (
+    <Card>
+      <h1>Title</h1>
+      <p>Content</p>
+    </Card>
+  );
+}
+
+export default App;
+```
+
+- `Card` 컴포넌트 내의 `h1`과 `p` 요소는 `Card`의 스타일과 함께 정의되어 있으며, 중첩된 스타일링을 통해 코드의 가독성과 유지보수성을 높인다.
+
+### 7. `&&`로 우선순위 높은 스타일 지정하기
+
+```jsx
+import styled from 'styled-components';
+
+const Button = styled.button`
+  color: blue;
+
+  &:hover {
+    color: green;
+  }
+
+  && {
+    color: red; /* 이 스타일은 다른 스타일보다 우선순위가 높다 */
+  }
+`;
+
+function App() {
+  return <Button>Click Me</Button>;
+}
+
+export default App;
+
+```
+
+- `&&` 이중 앰퍼샌드는 특정 컴포넌트 인스턴스에 스타일을 재정의할 때 유용하다. 다른 조건보다 이 스타일이 더 높은 우선순위를 가지도록 보장한다.
+
+### 8. `createGlobalStyle`로 전역 스타일 정의하기
+
+```jsx
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    color: red;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 16px;
+  }
+`;
+
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <h1>Hello, World!</h1>
+      <p>This is a global style example.</p>
+    </>
+  );
+}
+
+export default App;
+```
+
+- `createGlobalStyle`은 일반적인 `styled` 함수와 다르게 특정 컴포넌트 내에 스타일이 제한되지 않고, 전체 문서에 적용된다.
+- 전역 스타일은 애플리케이션 전체에 영향을 미치므로, 필요한 경우에만 신중하게 사용해야 한다.
