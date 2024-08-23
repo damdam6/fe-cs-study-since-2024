@@ -82,13 +82,21 @@ Call Stack을 살펴보자.
 > 3️. Callback Queue에서 Web API의 콜백 함수들이 대기하게 된다.   
 > 4️. Event Loop는 Call Stack 과 Callback Queue 를 주시하고 있다가 Call Stack 이 비게 되면 먼저 들어온 순서대로 Callback Queue에 있는 함수들을 Call Stack에 넣어준다.
 
-![eventloop](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*4lHHyfEhVB0LnQ3HlhSs8g.png)
+![setTimeout](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*4lHHyfEhVB0LnQ3HlhSs8g.png)
+
+
+**❗EventLoop란?**
+> 브라우저 내부의 Call Stack, Callback Queue, Web APIs 등의 요소들을 모니터링 하면서 비동기적으로 실행되는 작업들을 관리하고, 이를 순서대로 처리하여 프로그램의 실행 흐름을 제어한다. 간단히 이야기 하면 브라우저의 동작 타이밍을 제어하는 관리자 역할을 한다.   
+> 이벤트 루프의 동작 과정은 위의 `setTimeout` 처리 과정과 마찬가지로, 비동기 코드를 브라우저의 Web APIs 에게 맡긴 후 백그라운드 작업이 끝난 결과를 콜백 함수 형태로 Callback Queue 에 넣고 처리 준비가 되면 Call Stack에 넣어 마무리 작업을 진행한다.   
+> 이러한 과정들이 마치 순회하는 듯 하여 이벤트 루프라 부른다.
+![eventLoop](https://media.licdn.com/dms/image/v2/D4D12AQHxWSIwAh-Trw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685941521357?e=2147483647&v=beta&t=wq2GzUFJonsNUbRZkUL5AjJoZieAshXOR0jTwXGpkSw)
+
 
 
 ## 🧡 JS에서 비동기 처리하는 방법 3가지
-만약 비동기 요청이 여러 개 있을 때 하나의 요청이 다른 요청의 결과에 의존한다면 어떻게 될까?   
-아래의 코드에서처럼 둘 다 비동기 요청을 보내는데 두 번째 요청이 첫 번째 요청의 결과가 필요할 수 있다. 하지만 둘 다 병렬적으로 요청을 보내기 때문에 response1을 가지기 전에 두번째 요청이 보내지게 된다.   
-이러한 부분은 어떻게 처리할 수 있을까?
+만약 비동기 요청이 여러 개 있을 때 하나의 요청이 다른 요청의 결과에 의존한다면 어떻게 될까?    
+아래의 코드에서처럼 둘 다 비동기 요청을 보내는데 두 번째 요청이 첫 번째 요청의 결과가 필요할 수 있다. 하지만 둘 다 병렬적으로 요청을 보내기 때문에 response1을 가지기 전에 두번째 요청이 보내지게 된다. 
+이러한 부분(순차적으로 비동기 처리가 진행되어야 할 때)은 어떻게 처리할 수 있을까?
 ``` javascript
 // 1st request
 const response1 = request('https://abc.com');
@@ -108,7 +116,7 @@ function firstFunction(parameters, callback) {
 	callback(response1);
 }
 
-function firstFunction(parameters, callback) {
+function secondFunction(parameters, callback) {
 	const response2 = request(`https://abc.com?id=${parameters.id}`);
 	callback();
 }
@@ -191,3 +199,7 @@ async function makeRequests() {
 
 makeRequests();
 ```
+
+------
+**참고한 자료**
+https://inpa.tistory.com/entry/%F0%9F%94%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84-%EA%B5%AC%EC%A1%B0-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC
