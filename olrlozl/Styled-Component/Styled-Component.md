@@ -2,6 +2,13 @@
 
 - React와 같은 JavaScript 프레임워크에서 CSS를 컴포넌트 단위로 관리할 수 있도록 도와주는 라이브러리다.
 - CSS-in-JS 라이브러리로, 스타일을 JavaScript 코드 내에서 직접 작성하고 관리할 수 있게 해준다.
+- styled-components는 **runtime CSS**를 사용하는 라이브러리로, JavaScript 런타임 중에 컴포넌트가 렌더링되면서 CSS가 동적으로 생성되고 적용된다.
+  
+	- **runtime CSS**:
+ 		-  스타일이 JavaScript 런타임 중에 동적으로 생성되고 적용됩니다. 상태 기반 스타일링과 모듈화가 가능하지만, 성능 오버헤드가 있을 수 있다.
+     
+	- **zero-runtime CSS**:
+ 		- 스타일이 컴파일 타임에 미리 생성되며, 런타임에는 CSS 생성 작업이 없습니다. 성능 최적화와 디버깅 용이성이 있지만, 동적 스타일링에 제한이 있을 수 있다.
 
 ## 주요 기능 및 특징
 
@@ -191,6 +198,8 @@ export default App;
 ```
 
 - `&`는 **현재 컴포넌트**를 참조하는 선택자로, 스타일이 적용될 요소를 기준으로 추가 스타일을 정의할 때 사용한다.
+- `&::before` 가상 요소: `Hover Me` 텍스트 앞에 `→`가 표시되며, 버튼의 최종 텍스트는 `→Hover Me`로 보인다.
+- `&:hover` 가상 클래스: 기본 상태에서는 텍스트가 검정색 `color: black;`이지만, 마우스를 버튼 위에 올리면 `red` 색상으로 바뀐다.
 
 ### 6. 중첩 스타일링하기
 
@@ -228,29 +237,37 @@ export default App;
 ### 7. `&&`로 우선순위 높은 스타일 지정하기
 
 ```jsx
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Button = styled.button`
-  color: blue;
+  color: white;
+  background-color: blue;
 
   &:hover {
-    color: green;
+    background-color: red;
   }
 
-  && {
-    color: red; /* 이 스타일은 다른 스타일보다 우선순위가 높다 */
+  /* disabled 상태에서는 항상 우선적으로 스타일을 적용 */
+  &&[disabled] {
+    background-color: gray;
+    color: darkgray;
+    cursor: not-allowed;
   }
 `;
 
 function App() {
-  return <Button>Click Me</Button>;
+  return (
+    <>
+      <Button>Normal Button</Button>
+      <Button disabled>Disabled Button</Button>
+    </>
+  );
 }
-
-export default App;
-
 ```
 
 - `&&` 이중 앰퍼샌드는 특정 컴포넌트 인스턴스에 스타일을 재정의할 때 유용하다. 다른 조건보다 이 스타일이 더 높은 우선순위를 가지도록 보장한다.
+- 외부 라이브러리와의 충돌 방지, 테마 변경 시 특정 스타일 유지, 컴포넌트 상태에 따른 스타일 강제 적용 등 다양한 상황에서 활용될 수 있다.
+- 위 예시에서는 버튼 컴포넌트의 상태에 따라 disabled 속성이 있을 경우 특정 스타일이 우선적으로 적용되도록 한다.
 
 ### 8. `createGlobalStyle`로 전역 스타일 정의하기
 
