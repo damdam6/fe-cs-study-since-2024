@@ -40,6 +40,7 @@
   - cf. async 함수에서 await를 사용시 프라미스 작업이 끝날 때 까지 blocking 된다.
 
 - 예제
+
   ```jsx
   Promise.all([
     new Promise((resolve) => setTimeout(() => resolve(1), 3000)), // 1
@@ -47,9 +48,22 @@
     new Promise((resolve) => setTimeout(() => resolve(3), 1000)), // 3
   ]).then(alert); // 1, 2, 3이 반환됨
   ```
+
   - 이 때 인자 순서와 결괏값의 배열 순서는 동일하다.
   - 전달되는 프라미스 중 하나라도 거부되면, `Promise.all` 전체가 거부되며 에러 핸들링이 실행된다.
   - 이 때 거부 에러가 `Promise.all` 전체의 결괏값이 된다. 에러 발생 전 이행되었더라도 무시된다.
+
+- 여러 Promise 결과가 작업 순서 상관없이 모두 필요할 때 사용한다.
+
+  ```jsx
+  Promise.all([
+    fetch("/template.html"),
+    fetch("/style.css"),
+    fetch("/data.json"),
+  ]).then(render);
+
+  // 위 코드의 경우 html, css, 데이터 모두를 가지고 있어야 다음 단계인 렌더링을 수행 가능하기 때문에 Promise.all 을 사용하였습니다.
+  ```
 
 ### Promise.allSettled
 
@@ -95,6 +109,10 @@
 
 - Promise.all 과 비슷하지만, 각 프라미스 중 가장 먼저 처리되는 프라미스의 결과를 반환한다.
 - race(경주) 처럼 우승자가 결과값이 된다. 다른 프라미스들은 무시된다.
+
+- 실무에서 자주 사용하는 방식은 아님
+  - 서버로부터 일정 시간 응답이 없을경우 수동으로 오류 처리를 할 때 사용
+  - 보통 특정 작업 처리와 `timeout(n)` 프라미스를 동시에 실행하여 n초 안에 작업 처리가 되지 않은 경우 에러를 던지게 하는 방식으로 사용한다.
 
 ### Promise.resolve
 
