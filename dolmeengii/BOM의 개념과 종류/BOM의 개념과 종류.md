@@ -6,7 +6,7 @@
 브라우저 객체 모델은 문서 이외의 모든 것을 제어하기 위해 브라우저가 제공하는 추가 객체를 나타낸다.
 즉, 브라우저에 내장된 객체를 BOM(Browser Object Model) 이라고 한다. 이 구조의 최상위 객체인 Window 를 기준으로 하위 객체들이 Tree 형식의 계층적 구조로 이루어져 있는데 이를 브라우저 객체 모델이라고 한다.
 
-![tree](image/tree.png)
+![tree](https://github.com/dolmeengii/fe-cs-study/blob/6174dee5e109cda4866f1704a2c95a86102b5c14/dolmeengii/BOM%EC%9D%98%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%A2%85%EB%A5%98/image/tree.png)
 
 ### 브라우저 객체 모델의 표준
 w3schools 에 따르면, 브라우저 객체 모델에 대한 공식 표준은 없다고 한다. 최신 브라우저는 JavaScript 상호작용을 위해 거의 동일한 메서드와 속성을 구현하여 이를 종종 BOM의 메서드 및 속성으로 표현한다고 한다.
