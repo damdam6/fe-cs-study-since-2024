@@ -11,7 +11,7 @@
 - 효울적인 아키텍처 패턴
 - 메모리 계층 구조에서 캐시는 디스크나 메인 메모리보다 더 빠르게 데이터를 불러와서 사용해야 할 때 쓰인다.
 
-![메모리 계층 구조]()
+![메모리 계층 구조](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week04/bloblog/cache/image/memory_hierarchy_design.png?raw=true)
 
 - 단위 메모리당 비용이 비싸기 때문에 재사용을 많이 할 법한 데이터만 선별적으로 잘 캐싱해야 한다.
 - 캐시 메모리의 가격은 현재 메모리 소자 중에서 가장 비싼 편이다.
