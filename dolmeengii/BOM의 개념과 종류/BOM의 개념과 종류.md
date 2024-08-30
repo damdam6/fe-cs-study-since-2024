@@ -135,10 +135,10 @@ window.프레임이름.property
 #### 1️⃣ history 객체의 메서드
 |메서드|설명|
 |:--:|:--|
-|back()| `location.back()`<br>이전 방문 사이트로 이동한다.(뒤로가기)|
-|forword()| `location.forward()`<br>다음 방문 사이트로 이동한다.(앞으로가기)|
-|go()|`location.go(이동 숫자)`<br>현재 사이트에서 이동 숫자에 입력한 숫자만큼의 차이가 나는 방문 사이트로 이동한다. 음수, 양수 가능.|
-|length|`location.length`<br>방문 기록에 저장된 목록의 개수를 반환한다.|
+|back()| `history.back()`<br>이전 방문 사이트로 이동한다.(뒤로가기)|
+|forword()| `history.forward()`<br>다음 방문 사이트로 이동한다.(앞으로가기)|
+|go()|`history.go(이동 숫자)`<br>현재 사이트에서 이동 숫자에 입력한 숫자만큼의 차이가 나는 방문 사이트로 이동한다. 음수, 양수 가능.|
+|length|`history.length`<br>방문 기록에 저장된 목록의 개수를 반환한다.|
 
 <br>
 
