@@ -143,7 +143,7 @@ window.프레임이름.property
 <br>
 
 #### 2️⃣ history로 URL State 관리하기
-##### `location.pushState(state, title, url)`
+##### `history.pushState(state, title, url)`
 페이지를 리로드하지 않고 페이지 주소만 변경할 때 사용한다. 즉, 페이지의 이동 없이 주소만 바꿔준다.
 > state: 브라우저 이동 시 넘겨줄 데이터를 작성한다.   
 > title: 변경할 브라우저 제목으로 원치 않으면 null을 입력할 수 있다.    
@@ -152,7 +152,7 @@ window.프레임이름.property
 
 <br>
 
-##### `location.replaceState(state, title, url)`
+##### `history.replaceState(state, title, url)`
  브라우저의 세션 기록을 수정하거나 대체하는 역할을 하며, 웹 페이지의 URL과 관련된 정보를 업데이트한다.   
 > state: 새로운 URL과 관련된 상태로, 페이지의 히스토리 엔트리와 연결하여 추가 정보나 데이터를 저장하는 데 사용한다.   
 > title: 페이지의 제목을 나타내는 문자열로 일반적으로 빈 문자열이 전달된다. 
