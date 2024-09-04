@@ -149,7 +149,7 @@ async function getCachedData() {
 getCachedData();
 ```
 
-![image.png]()
+![image.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week05/bloblog/cache-js/image/image.png?raw=true)
 
 - 일치하는 항목이 있으면 `Response` 를, 없으면 `undefined` 를 반환한다.
 - 전체 캐시에서 검색했을 때, 인자로 주어진 요청과 두 개 이상 일치하는 경우 먼저 생성된 요청의 응답을 반환한다.
