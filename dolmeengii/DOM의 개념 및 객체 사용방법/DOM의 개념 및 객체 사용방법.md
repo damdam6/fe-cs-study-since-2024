@@ -182,7 +182,7 @@ DOM에 수행하는 모든 연산은 document 객체에서 시작하는데, 이 
 
 <br>
 
-![DOM_탐색](./image/%08DOM%ED%83%90%EC%83%89.png)
+![DOM_탐색](https://github.com/dolmeengii/fe-cs-study/blob/063e32d5789c4975493f6b0cac7b31a698f4ea14/dolmeengii/DOM%EC%9D%98%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%EA%B0%9D%EC%B2%B4%20%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/image/%08DOM%ED%83%90%EC%83%89.png)
 
 #### 트리 상단의 documentElement와 body
 DOM 트리 상단의 노드들은 document 가 제공하는 프로퍼티를 사용해 접근할 수 있다.   
