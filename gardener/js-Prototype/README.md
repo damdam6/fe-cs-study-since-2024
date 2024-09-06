@@ -58,8 +58,7 @@ gardener.__proto__._name = 'Gardener__proto__';
 gardener.__proto__.getName(); // Gardener__proto__
 ```
 
-하지만 우리가 지금까지 위와 같이 __proto__ 를 쓰지 않고 코드를 작성할 수 있었던 이유는 바로 __proto__ 가 생략 가능한 프로퍼티 이기 때문이었다.
-
+우리가 지금까지 __proto__를 쓰지 않고도 코드를 작성할 수 있었던 이유는, 자바스크립트가 객체의 프로토타입 체인을 자동으로 탐색하기 때문입니다. 따라서 우리가 gardener.getName()을 호출하면, 자바스크립트는 내부적으로 gardener.__proto__를 통해 getName을 찾아 실행합니다. 그래서 __proto__를 명시적으로 쓰지 않아도 메서드 호출이 가능합니다.
 ```javascript
 gardener.__proto__.getName();
 -> gardener.getName();
