@@ -24,9 +24,18 @@ DOM(Document Object Model)은 메모리에 웹 페이지 문서 구조를 트리
 ![DOM_TREE_EXAMPLE](https://www.freecodecamp.org/news/content/images/2024/01/9-dom-example.png)
 
 <br>
-<br>
-<br>
 
+#### DOM과 DOM을 구성하는 요소
+|이름|설명|
+|:--:|:--|
+|DOM| - 문서 객체 모델로, 말 그대로 객체 지향 모델로써 구조화된 문서를 표현하는 하나의 형식을 의미<br> - 현재 다루고 있는 HTML DOM 은 HTML 문서를 조작하고 접근하는 표준화된 방법과 형식을 의미|
+|Node| - HTML DOM에서 정보를 저장하는 계층적 단위를 의미<br> - DOM Tree에서 HTML 하위의 트리들을 노드 트리라고 하는데 이것은 노드들의 집합으로 이루어져 있으며 노드 간 관계를 표현한다.|
+|Element| - 요소라고 하며, 노드의 특정 타입 중 하나이다.<br> - HTML 태그로 바로 특정할 수 있거나, id나 class 같은 속성을 가진 것을 의미|
+
+
+<br>
+<br>
+<br>
 
 ### DOM 조작
 위에 보이는 DOM 트리를 DOM에서 제공해주는 API를 사용하여 조작할 수 있다. 이 API를 이용해서 DOM 구조에 접근하거나 원하는 요소를 수정하거나 삭제할 수 있다.
@@ -137,13 +146,13 @@ document.querySelector('li:nth-child(even)').style.color = 'lightgray';
 **여러 요소에 접근할 때**   
 아래는 여러 요소에 접근할 때 사용할 수 있는 세가지 메서드이다.
 ```jsx
-// 파라미터로 전달한 태그 이름을 가진 모든 태그들을 반환 (배열)
-document.getElementByTagName(태그 이름);
+// 파라미터로 전달한 태그 이름을 가진 모든 태그들을 반환 (HTML Collection 객체 - 유사배열)
+document.getElementsByTagName(태그 이름);
 
-// 파라미터로 전달한 클래스 이름을 가진 모든 태그들을 반환 (배열)
-document.getElementByClassName(클래스 이름);
+// 파라미터로 전달한 클래스 이름을 가진 모든 태그들을 반환 (HTML Collection 객체 - 유사배열)
+document.getElementsByClassName(클래스 이름);
 
-// 파라미터로 전달한 선택자에 맞는 모든 태그를 반환 (배열)
+// 파라미터로 전달한 선택자에 맞는 모든 태그를 반환 (NodeList - 유사배열)
 document.querySelectorAll(선택자);
 ```
 아래는 위의 세가지 코드를 사용한 예시 코드이다. 
@@ -159,7 +168,7 @@ let lists = document.getElementByTagName('li');
 console.log(lists); // Collections 값으로 반환
 lists.forEach((list) => {
 	console.log(list);
-}); // Collectios 일 때 forEach 사용 불가 -> Error 메시지 반환
+}); // Collections 일 때 forEach 사용 불가 -> Error 메시지 반환
 
 lists = Array.from(lists);
 console.log(lists); // Array 값으로 반환
@@ -167,6 +176,22 @@ lists.forEach((list) => {
 	console.log(list);
 }); // Array 의 요소를 반환
 ```
+
+**💡 유사 배열 객체란 무엇인가요? 배열과 다른가요?**   
+> 유사 객체 배열은 배열처럼 보이지만 사실 key가 숫자이고, length 속성을 가지고 있는 객체를 의미한다.   
+> 유사 배열은 주로 함수에서 처리 결과로 반환하고 싶을 때, Array에서 기본으로 내포되어 있는 기능을 제공하고 싶지 않거나 Array에 내포되어 있지 않은 기능을 제공하고 싶을 때 사용한다.
+
+
+HTMLCollections와 NodeList는 DOM API가 여러개의 결과값을 반환하기 위해 사용하는 DOM 객체로, 유사 배열 객체이며 이터러블하다는 특징을 가지고 있다.
+그렇다면 HTMLCollections와 NodeList의 차이점은 뭘까?
+|HTMLCollections|NodeList|
+|:--:|:--:|
+|getElementsByTagName<br>getElementsByClassName|querySelectorAll|
+|Live 객체|대부분 Non-live 객체<br>(childNodes 프로퍼티는 live 객체)|
+|forEach 사용불가|forEach 사용가능|
+> NodeList에서 forEach 사용이 가능하다고는 하지만 종종 에러가 발생할 수 있으니, 두 객체 모두 Array로 바꾸어 사용하는 것을 권장한다.
+
+
 
 <br>
 <br>
@@ -328,6 +353,8 @@ val = listItem.previousElementSibling;
 | 모든 노드에 적용 가능 | parentNode, childNode, firstChild, lastChild, previousSibling, nextSibling |
 | --- | --- |
 | 요소 노드만 적용 가능 | parentElement, children, firstElementChild, lastElementChild, previousElementSibling, nextElementSibling |
+
+모든 노드란 DOM Tree에 포함된 모든 노드를 의미하고, 요소 노드란 DOM Tree에 포함된 element 노드를 의미한다. 따라서, document 메서드를 사용해 추가된 요소 노드 뿐만 아니라 HTML 문서에서 작성한 요소 모두 DOM 트리에 존재한다면 적용이 가능하다.
 
 <br>
 <br>
