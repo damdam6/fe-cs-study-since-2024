@@ -139,7 +139,7 @@ console.log(Score().current());
 Score().increment();
 console.log(Score().current());
 ```
-![example](./images/example1.png)
+![example](https://github.com/dolmeengii/fe-cs-study/blob/4107128d08397e89670d53c64cd8d386b11ffdfa/dolmeengii/JavaScript%20%ED%95%A8%EC%88%98%20%ED%91%9C%ED%98%84%20%EB%B0%A9%EC%8B%9D/images/example1.png)
 
 
 2️⃣ IIFE로 Closure가 가능하게 만든 후에 내부 함수에서 외부함수에 있는 변수를 접근되게 해준다.
@@ -164,7 +164,7 @@ Score.reset();
 console.log(Score.current());
 
 ```
-![example](./images/example2.png)
+![example](https://github.com/dolmeengii/fe-cs-study/blob/4107128d08397e89670d53c64cd8d386b11ffdfa/dolmeengii/JavaScript%20%ED%95%A8%EC%88%98%20%ED%91%9C%ED%98%84%20%EB%B0%A9%EC%8B%9D/images/example2.png)
 
 
 <br>
