@@ -7,6 +7,8 @@
 | week 01 |  웹 성능 최적화   |      ✅      |     ✅      |
 | week 02 | `Promise` 의 활용 |      ✅      |     ✅      |
 | week 03 |  `Promise` 심화   |      ✅      |     ✅      |
-| week 04 |       캐싱        |              |             |
+| week 04 |       캐싱        |      ✅      |     ✅      |
+| week 05 | 자바스크립트 캐싱 |      ✅      |     ✅      |
+| week 05 | React-query 캐싱  |      ✅      |             |
 
 > 완료시 ✅
