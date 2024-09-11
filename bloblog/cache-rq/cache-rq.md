@@ -16,6 +16,7 @@
 
 - 고수준의 추상화로 전역 상태 관리 및 데이터 동기화가 가능하다.
 - 확장성이 좋고, 데이터 요청 및 관리를 하기 쉽게 만들어 준다.
+
   ```jsx
   // 예제
 
@@ -43,13 +44,14 @@
     axios.get(url).then((res) => res.data)
   );
   ```
+
 - 캐시를 통해 api 호출을 줄이고 사용자 경험을 향상할 수 있다.
 
 ### 데이터의 생애주기
 
 devtool 실행시 아래와 같이 해당 데이터가 현재 어떤 상태인지 보여준다
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/32b54871-9d93-4376-bc12-b11af2bce837/5a781fe8-8f5e-401e-8871-a7b61e675e6c/image.png)
+![image.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week06/bloblog/cache-rq/image/lifecycle.png?raw=true)
 
 - Fresh
   - staleTime이 지나지 않은 데이터
@@ -147,9 +149,9 @@ const { data: uncachedData, isLoading: isLoadingUncached } = useQuery({
 });
 ```
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/32b54871-9d93-4376-bc12-b11af2bce837/4e2be5c9-624b-46e1-91ae-c8545bf8e205/image.png)
+![image.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week06/bloblog/cache-rq/image/cached.png?raw=true)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/32b54871-9d93-4376-bc12-b11af2bce837/44d6cab6-ab97-4b80-a781-e5364c095d4d/image.png)
+![image.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week06/bloblog/cache-rq/image/uncached.png?raw=true)
 
 ## 👀 참고자료
 
