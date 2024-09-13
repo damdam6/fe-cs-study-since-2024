@@ -1,6 +1,6 @@
 # Prototype Chain
 
-저번 시간에는 Prototype Chain에 대해서 알아보았다. 이번 시간에는 Prototype Chain 에 대해서 알아본다.
+저번 시간에는 Prototype에 대해서 알아보았다. 이번 시간에는 Prototype Chain 에 대해서 알아본다.
 
 prototype 객체를 참조하는 __proto__를 생략하면 인스턴스는 prototype에 정의된 프로퍼티나 메서드를 마치 자신의 것처럼 사용할 수 있다. 그런데 만약 인스턴스가 동일한 이름의 프로퍼티 또는 메서드를 가지고 있는 상황이라면 어떨까?
 
@@ -55,7 +55,7 @@ JS 엔진이 getName 이라는 메서드를 찾는 방식
 
 __proto__는 생략 가능한 속성이라서, 인스턴스는 Constructor.prototype의 메서드를 마치 자신의 메서드인 것처럼 호출할 수 있다.
 
-Constructor.prototypedpsms constructor라는 프로퍼티가 있는데, 이는 다시 생성자 함수 자신을 가리킨다. 이 프로퍼티는 인스턴스가 자신의 생성자 함수가 무엇인지를 알고자 할 때 필요한 수단이다.
+Constructor.prototype에는 constructor라는 프로퍼티가 있는데, 이는 다시 생성자 함수 자신을 가리킨다. 이 프로퍼티는 인스턴스가 자신의 생성자 함수가 무엇인지를 알고자 할 때 필요한 수단이다.
 
 계속해서 상위단계로 prototype Chaining을 하다 보면 Object.prototype에 도달하게 된다. 이 프로토타입 체이닝을 통해 각 프로토타입 메서드를 자신의 것처럼 호출할 수 있다. 이 때 접근 방식은 자신으로부터 가장 가까운 대상부터 점차 먼 대상으로 나아가며, 원하는 값을 찾으면 검색을 중단한다.
 
