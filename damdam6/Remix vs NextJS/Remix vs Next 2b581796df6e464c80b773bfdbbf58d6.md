@@ -85,7 +85,7 @@
 - Next.js의 사용자 경험 처리
     - ISR, 이미지 최적화로 원활한 사용자 경험 제공
     - Client-Side-Navigation을 통해 페이지 빠른 로드 가능
-        
+
         참고 : https://nextjs.org/learn-pages-router/basics/navigate-between-pages/client-side
         
     - 페이지 수준에서 코드 스플리팅이 자동으로 발생
@@ -93,8 +93,84 @@
     - Optimistic UI로 최적화
     - 초기 페이지 로드와 매끄러운 전환이 중요한 디자인 요소일때 유리
 
+### 4. 에러 처리(Error handling) 비교
+
+- 기본적인 React의 에러 처리
+    - 에러 경계(error boundaries)를 통한 자연스러운 처리
+        - `에러 경계는 **컴포넌트 트리가 깨지는 대신 자식 컴포넌트 트리에서 에러를 잡아내고, 이러한 에러의 로그를 남기고, 폴백 UI를 보여주는 React 컴포넌트**입니다.`  - React Docs
+        - Next.js와 Remix 모두 해당 처리 제공
+- Next.js의 에러 처리
+    - 기본 에러 페이지 및 사용자 정의 에러 페이지 제공
+    - 사용자 정의 에러 페이지
+        - 404(페이지 없음)이나 500(서버 오류)와 같은 에러 처리 가능한 사용자 정의 에러 페이지를 만들 수 있도록 지원함.
+        - `pages/404.js`  `pages/500/js` 경로를 통해 생성 가능
+    - 서버 사이드 렌더링 및 정적 페이지 생성에서의 에러 처리 지원
+- Remix의 에러 처리
+    - `ErrorBoundary` 을 통해서 설정
+    - `loaderError` `jsonError` 등 라이프 사이클 훅을 통해 데이터 로딩 중 발생하는 에러 컨트롤
+
+- 에러 처리에 기반한 프레임워크 비교
+    - 간단한 에러 헨들링 선호 → Remix
+    - 커스텀화 된 에러 처리 세팅이 필요할때 →  Next.js
+
+### 5. 데이터 변경 (Data mutations)
+
+- data mutation
+    - 사용자가 사이트나 앱과 상호작용 할 때, 정보를 입력, 변경, 데이터를 업데이트 하는 이벤트를 트리거 하는 것을 의미
+    
+- Next.js의 data mutation
+    - client-side : React 도구를 사용하여 관리
+    - server-side : 서버에서 데이터를 변경 처리할 수 있는 기능 제공
+        - DB 업데이트와 같은 작업에 유용
+            
+            ```java
+            // pages/api/updateData.js
+            export default function handler(req, res) {
+              if (req.method === 'POST') {
+                // 요청 데이터로 데이터베이스 업데이트하기
+                const { id, newData } = req.body;
+            
+                // 여기에 데이터베이스 로직을 추가 (예: MySQL, MongoDB 등)
+                
+                res.status(200).json({ message: 'Data updated successfully' });
+              } else {
+                res.status(405).end(); // 허용되지 않은 메서드 처리
+              }
+            }
+            ```
+            
+- remix의 data mutation
+    - HTML 폼을 사용하거나 Remix의 `Form` 컴포넌트를 통해 자바스크립트로 에뮬레이션 할 수 있음.
+    - 단순하고 알기 쉬운 방식으로 구현 가능.
+
+### 6. 빌드 타임 비교
+
+- Build time 의 필요성
+    - 빠르게 반복적으로 변경 가능함.
+    - 대형 프로젝트의 경우 빌드 타임이 중요함.
+    - 두 프레임워크는 유사한 성능을 보이나 부정적인 경우가 일부 정해져 있음.
+    
+- Next.js의 빌드 시간 - 긍정
+    - Next.js는 빠른 빌드 시간을 지향함.
+    - 효율적인 코드 컴파일이 발생함. (변경된 부분만 컴파일함)
+    - 자동적인 코드 스플리팅을 통해 최적화를 진행함. 또한 이미지 최적화 등을 자동으로 수행.
+- Next.js의 빌드 시간 - 주의점
+    - 프로젝트 크기가 클 경우 빌드 시간이 길어짐.
+    - 동적 데이터를 빌드타임에 불러올 경우 느려질 수 있음.
+    - 서버리스 함수를 지원하므로 이를 복잡하게 사용할 경우 빌드가 느려질 수 있음.
+
+- Remix의 빌드 시간 - 긍정
+    - 빌드 시간이 상당히 빠르며 대규모 코드베이스나 복잡한 프로젝트에서는 Next.js보다 빠른 빌드가 가능함.
+    - 효율적으로 컴파일 됨. (Next.js와 동일)
+    - 자동 최적화.
+- Remix의 빌드 시간 - 주의점
+    - 복잡한 라우팅 요구사항이 있을 경우 빌드 시간이 늘어날 수 있음.
+    - 커스텀 데이터 로딩을 통해 미리 데이터를 불러오는 기능(페이지에 적용하기 위해)이 있는데 해당 코드가 복잡해질 경우 빌드가 느려짐.
+
 ---
 
 https://velog.io/@supremgy/ChatGPT가-Next.js에서-Remix로-갈아탔데
 
 https://zerotomastery.io/blog/remix-vs-next/
+
+https://reactjs-kr.firebaseapp.com/docs/error-boundaries.html
