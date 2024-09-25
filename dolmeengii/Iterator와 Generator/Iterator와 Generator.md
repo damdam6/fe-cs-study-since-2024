@@ -73,8 +73,6 @@ console.log(numbersIterator.next());
 
 # 2. Generator
 
----
-
 ## 1) Generator 란?
 ### Genrerator의 개념
 Generator Function 은 사용자의 요구에 따라 다른 시간 간격으로 여러 값을 반환할 수 있다.
