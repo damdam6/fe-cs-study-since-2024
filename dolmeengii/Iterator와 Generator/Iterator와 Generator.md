@@ -44,18 +44,6 @@ console.log(numbersIterator.next());
 
 **Symbol 사용**
 ```jsx
-function makeIterator(numbers) {
-	let nextIndex = 0;
-	
-	return {
-		nex: function() {
-			return nextIndex < numbers.length ? 
-						{value: numbers[nextIndex++], done: false} : 
-						{value: undefined, done: true};
-		}
-	}
-}
-
 // 숫자 배열 생성
 const numbersArr = [1, 2, 3];
 
