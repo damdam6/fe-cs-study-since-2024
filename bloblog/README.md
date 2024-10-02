@@ -9,6 +9,7 @@
 | week 03 |  `Promise` 심화   |      ✅      |     ✅      |
 | week 04 |       캐싱        |      ✅      |     ✅      |
 | week 05 | 자바스크립트 캐싱 |      ✅      |     ✅      |
-| week 05 | React-query 캐싱  |      ✅      |             |
+| week 06 | React-query 캐싱  |      ✅      |     ✅      |
+| week 07 |     지연로딩      |      ✅      |             |
 
 > 완료시 ✅
