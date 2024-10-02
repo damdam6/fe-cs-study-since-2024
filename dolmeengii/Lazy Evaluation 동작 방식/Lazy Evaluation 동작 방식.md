@@ -45,7 +45,7 @@ const result = arr
 console.log(result); // [11, 13]
 ```
 
-![img](./images/strict.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/b552d605c5d98534a87d69080041fb45668ace1d/dolmeengii/Lazy%20Evaluation%20%EB%8F%99%EC%9E%91%20%EB%B0%A9%EC%8B%9D/images/strict.png)
 
 > 위 코드에서는 map, filter, slice 고차함수들이 각각의 계산이 모두 종료되어야 다음 단계를 수행한다. 총 계산 횟수를 구하면 map에서 6번, filter에서 6번, slice에서 2번으로 총 14번이 된다.
 
@@ -69,7 +69,7 @@ console.log(result); // [11, 13]
 
 > 위의 코드에서는 chain 함수의 인자로 사용할 데이터를 넘기면 해당 데이터를 lodash 객체로 감싸준다. 이후 lodash에서 제공되는 지연평가 메서드를 이용하여 원하는 결과로 가공한다. 마지막으로 value 함수를 통해 래핑된 결과를 실제 값으로 반환한다.
 
-![img](./images/lazy.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/b552d605c5d98534a87d69080041fb45668ace1d/dolmeengii/Lazy%20Evaluation%20%EB%8F%99%EC%9E%91%20%EB%B0%A9%EC%8B%9D/images/lazy.png)
 
 위 그림에서 볼 수 있듯이 지연평가의 흐름은 배열 원소 3까지 평가가 완료되었을 때 이미 원하는 결과가 나왔기 때문에 그 이후 원소에 대한 연산은 하지 않는다. 따라서 총 계산 횟수를 구해보면 map 4번, filter 4번, slice 2번으로 총 10번이 된다. 즉, 지연 평가는 해당하는 값에 대해서만 연산을 수행하기 때문에 불필요한 연산이 줄어든다.
 
