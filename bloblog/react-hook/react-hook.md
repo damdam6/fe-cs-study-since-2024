@@ -178,9 +178,13 @@ export default App;
   - 명시적으로 props를 전달해주지 않아도 부모 컴포넌트가 트리에 있는 자식 컴포넌트의 정보를 사용할 수 있음
   - props drilling 의 불필요한 반복을 줄일 수 있다.
 
+> 다크모드 설정 예제
+
+![useContext.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week08/bloblog/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9/image/useContext.png?raw=true)
+
 ```jsx
-// Context 생성
-// 기본값으로 null을 넣어준다.
+// ThemeContext.js
+// Context 생성 -> 기본값으로 null을 넣어준다.
 export const ThemeContext = createContext(null);
 
 // App.js
