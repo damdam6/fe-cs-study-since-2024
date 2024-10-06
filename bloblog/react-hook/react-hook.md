@@ -180,7 +180,7 @@ export default App;
 
 > 다크모드 설정 예제
 
-![useContext.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week08/bloblog/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9/image/useContext.png?raw=true)
+![useContext.png](https://raw.githubusercontent.com/damdam6/fe-cs-study-2024/01771dc09ea7c0fe6eb553ed89e441f926e79f4f/bloblog/react-hook/image/useContext.png)
 
 ```jsx
 // ThemeContext.js
