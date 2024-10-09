@@ -9,6 +9,7 @@
 | week 05 | 자바스크립트 캐싱 |      ✅      |     ✅      |
 | week 06 | React-query 캐싱  |      ✅      |     ✅      |
 | week 07 |     지연로딩      |      ✅      |     ✅      |
-| week 08 |    리액트 Hook    |      ✅      |             |
+| week 08 |    리액트 Hook    |      ✅      |     ✅      |
+| week 09 |  API 호출 최적화  |      ✅      |             |
 
 > 완료시 ✅

@@ -26,7 +26,7 @@
 - 자바스크립트에 한정되지 않는 프로그래밍 용어
 - 둘을 비교하면 이런 느낌
 
-![image1.png]()
+![image1.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/image1.png?raw=true)
 
 ## 디바운싱 (Debouncing)
 
@@ -44,7 +44,7 @@
   - 유료/횟수 제한이 있는 api를 사용할 때
 - 디바운싱은 이벤트를 처리하는 시점으로 리딩 엣지(leading edge)와 트레일링 엣지(trailing edge)로 나눌 수 있다
 
-  ![image2.png]()
+  ![image2.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/image2.png?raw=true)
 
   - 리딩 엣지 : 첫 이벤트가 기준
     - 처음에 실행하는 함수를 처리하고 그 뒤에 입력을 무시
@@ -76,7 +76,7 @@ function App() {
 }
 ```
 
-![디바운싱.gif]()
+![디바운싱.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/디바운싱.gif?raw=true)
 
 - 예제) 특정 크기로 resize 가 완료되면 한 번에 처리
 
@@ -150,7 +150,7 @@ const ResizableBox = () => {
 };
 ```
 
-![resize.gif]()
+![resize.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/resize.gif?raw=true)
 
 ## 쓰로틀링(Throttling)
 
@@ -186,7 +186,7 @@ function App() {
 }
 ```
 
-![쓰로틀링.gif]()
+![쓰로틀링.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/쓰로틀링.gif?raw=true)
 
 - 예제) 스크롤 이벤트 관찰  
   \*\*7주차 [이미지 지연 로딩](<[https://github.com/damdam6/fe-cs-study-2024/blob/main/bloblog/지연로딩/지연로딩.md#이미지-지연-로딩](https://github.com/damdam6/fe-cs-study-2024/blob/main/bloblog/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9/%EC%A7%80%EC%97%B0%EB%A1%9C%EB%94%A9.md#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A7%80%EC%97%B0-%EB%A1%9C%EB%94%A9)>) 참고
@@ -273,7 +273,7 @@ fetchCatImages(
 );
 ```
 
-![scroll.gif]()
+![scroll.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week09/bloblog/API%ED%98%B8%EC%B6%9C%20%EC%B5%9C%EC%A0%81%ED%99%94/image/scroll.gif?raw=true)
 
 ## 기타 최적화 방안
 
