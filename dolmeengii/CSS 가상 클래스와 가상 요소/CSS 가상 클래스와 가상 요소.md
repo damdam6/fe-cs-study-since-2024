@@ -40,7 +40,7 @@
 
 위와 같은 코드가 있을 때, 실행 결과는 아래와 같다.
 
-![img](./images/first-child.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/ea243947865896bf13340cbc14bc6f72f58730de/dolmeengii/CSS%20%EA%B0%80%EC%83%81%20%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EA%B0%80%EC%83%81%20%EC%9A%94%EC%86%8C/images/first-child.png)
 
 > **:first-child** 를 사용했을 때 색이 적용되지 않는 이유는 `<p>` 는 부모 `<div>` 의 두번째 자식부터 시작하기 때문에 첫번째 자식인 `<span>`을 건너 뛰고 사용할 수 없다. <br>
 > 하지만 **:first-of-type** 은 부모 `<div>` 의 두번째 자식인 `<p>`에 대해 `<p>` 타입 중에는 처음 등장했기 때문에 적용이 가능하다.
@@ -138,7 +138,7 @@ li:first-of-type::before {
 
 #### 위 코드의 실행 결과
 
-![img](./images/after.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/ea243947865896bf13340cbc14bc6f72f58730de/dolmeengii/CSS%20%EA%B0%80%EC%83%81%20%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EA%B0%80%EC%83%81%20%EC%9A%94%EC%86%8C/images/after.png)
 
 **::before** 과 **::after**는 꼭 `content` 와 같이 쓰여야 하며 이 `content`는 가짜 속성이다.
 
