@@ -33,7 +33,7 @@
   color: lightpink;
 }
 
-.parent p:first-of-child {
+.parent p:first-of-type {
   color: lightskyblue;
 }
 ```
