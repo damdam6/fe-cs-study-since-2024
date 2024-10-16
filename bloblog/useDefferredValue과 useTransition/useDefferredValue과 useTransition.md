@@ -54,7 +54,7 @@ export default function Home() {
 }
 ```
 
-![defer.png]()
+![defer.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week10/bloblog/useDefferredValue%EA%B3%BC%20useTransition/image/defer.png?raw=true)
 
 ## useTransition
 
@@ -89,7 +89,7 @@ export default function Home() {
 }
 ```
 
-![trans.png]()
+![trans.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week10/bloblog/useDefferredValue%EA%B3%BC%20useTransition/image/trans.png?raw=true)
 
 ### 두 hook 의 차이점?
 
