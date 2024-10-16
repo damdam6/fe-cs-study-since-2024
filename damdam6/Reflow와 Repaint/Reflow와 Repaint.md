@@ -21,7 +21,7 @@
 - Repaint
     - 페이지의 요소가 색상과 같이 레이아웃에 영향을 미치지 않는 속성을 변경하면 발생함.
     - 레이아웃에 영향이 없으나 성능엔 영향을 미침. (Repaint보다는 저렴)
-    - outline, visibility, color 등을
+    - outline, visibility, color 등을 변경할 때 발생.
 
 ### Avoid Reflow and Repaint
 
