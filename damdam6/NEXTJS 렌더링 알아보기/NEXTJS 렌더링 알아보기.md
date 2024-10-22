@@ -62,7 +62,7 @@ NEXT.JS의 렌더링 방식이 다양하다는 것을 한 번 정리해보고 �
 
 ### Pre-rendering
 
-![image.png](image 1.png)
+![image.png](image%201.png)
 
 - Pre-rendering이란?
     - 모든 페이지를 미리 렌더링 한다.
@@ -74,13 +74,13 @@ NEXT.JS의 렌더링 방식이 다양하다는 것을 한 번 정리해보고 �
 
 - SSR with Pre-rendering
     
-    ![image.png](image 2.png)
+    ![image.png](image%202.png)
     
     - 매 요청마다 HTML 생성한다.
     - 여기서 `매 요청` 은 접속 혹은 새로 고침 시 발생하는 매 요청을 의미
 - SSG with Pre-rendering
     
-    ![image.png](image 3.png)
+    ![image.png](image%203.png)
     
     - SSG = Static Site Generation
     - 빌드 타임에 HTML이 생성되고 이를 재사용한다.
