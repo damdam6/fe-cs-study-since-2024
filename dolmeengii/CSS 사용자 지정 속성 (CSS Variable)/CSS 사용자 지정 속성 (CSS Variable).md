@@ -25,9 +25,7 @@ CSS를 작성하는 자가 정의하는 개체로, 문서 전반적으로 재사
 
 ```css
 --css-variable-name: css property value;
-```
 
-```css
 :root {
   --main-bg-color: #000080;
   --main-text-color: #fff;
@@ -37,11 +35,7 @@ CSS를 작성하는 자가 정의하는 개체로, 문서 전반적으로 재사
 2️⃣ **생성한 CSS 변수를 사용한다. (var() 이용)**
 
 ```css
-css property: var(--css-variable-name)
-```
-
-```css
-body {
+cssproperty: var(--css-variable-name) body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
