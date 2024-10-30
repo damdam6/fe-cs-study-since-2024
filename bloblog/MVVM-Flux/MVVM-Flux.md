@@ -18,7 +18,7 @@
 
 _모델(Model) + 뷰(View) + 컨트롤러(Controller)_
 
-![mvc.jpg]()
+![mvc.jpg](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week11/bloblog/MVVM-Flux/image/mvc.jpg?raw=true)
 
 ### View
 
@@ -61,7 +61,7 @@ _모델(Model) + 뷰(View) + 프레젠터(Presenter)_
 
 _모델(Model) + 뷰(View) + 뷰모델(View Model)_
 
-![mvvm.jpg]()
+![mvvm.jpg](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week11/bloblog/MVVM-Flux/image/mvvm.jpg?raw=true)
 
 ### View
 
