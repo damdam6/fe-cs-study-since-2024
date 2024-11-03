@@ -18,7 +18,7 @@ ESLint는 사용자 정의 규칙을 생성하거나 기존 규칙을 확장할 
 
 #### ✅ 플러그인 아키텍처
 
-ESLint는 다양한 플러그인을 지원하여 여러 프레임워크와 라이브러리를 처리할 수 있도록 화장할 수 있다.
+ESLint는 다양한 플러그인을 지원하여 여러 프레임워크와 라이브러리를 처리할 수 있도록 확장할 수 있다.
 
 #### ✅ 자동 수정 기능
 
@@ -68,7 +68,7 @@ ESLint는 필요에 맞게 규칙을 조정할 수 있어 코드 작성 및 검�
 > eslint는 espree.parse() 메서드를 통해 AST로 변환해준다. <br>
 
 3️⃣ AST를 기준으로 각종 규칙과 대조한다. <br>
-4️⃣ 규칙과 대조했을 떄 위반한 코드를 알리거나(report) 수정한다(fix). <br>
+4️⃣ 규칙과 대조했을 때 위반한 코드를 알리거나(report) 수정한다(fix). <br>
 
 ### 2) 예시와 함께 보기
 
@@ -100,6 +100,7 @@ function dolmeengii() {
 "use strict";
 
 module.exports = {
+  // meta는 규칙에 대한 메타데이터 정보를 담고 있다.
   meta: {
     type: "suggestion",
 
@@ -133,6 +134,7 @@ module.exports = {
       },
     ],
     messages: {
+      // 객체의 키값 - tooDeeply
       tooDeeply:
         "Blocks are nested too deeply ({{depth}}). Maximum allowed is {{maxDepth}}.",
     },
@@ -153,31 +155,37 @@ module.exports = {
       maxDepth = option;
     }
 
+    // 핸들러1
     function startFunction() {
       functionStack.push(0);
     }
 
+    // 핸들러2
     function endFunction() {
       functionStack.pop();
     }
 
+    // 핸들러3
     function pushBlock(node) {
       const len = ++functionStack[functionStack.length - 1];
 
       if (len > maxDepth) {
         context.report({
           node,
-          messageId: "tooDeeply",
+          messageId: "tooDeeply", // 여기서 객체의 키값이 메시지Id로 사용됨
           data: { depth: len, maxDepth },
         });
       }
     }
 
+    // 핸들러4
     function popBlock() {
       functionStack[functionStack.length - 1]--;
     }
 
+    // create 함수는 객체를 반환한다.
     return {
+      // 핸들러1 연결
       Program: startFunction,
       FunctionDeclaration: startFunction,
       FunctionExpression: startFunction,
@@ -189,6 +197,7 @@ module.exports = {
           pushBlock(node);
         }
       },
+      // 핸들러3 연결
       SwitchStatement: pushBlock,
       TryStatement: pushBlock,
       DoWhileStatement: pushBlock,
@@ -198,6 +207,7 @@ module.exports = {
       ForInStatement: pushBlock,
       ForOfStatement: pushBlock,
 
+      // 핸들러4 연결
       "IfStatement:exit": popBlock,
       "SwitchStatement:exit": popBlock,
       "TryStatement:exit": popBlock,
@@ -208,6 +218,7 @@ module.exports = {
       "ForInStatement:exit": popBlock,
       "ForOfStatement:exit": popBlock,
 
+      // 헨들러2 연결
       "FunctionDeclaration:exit": endFunction,
       "FunctionExpression:exit": endFunction,
       "ArrowFunctionExpression:exit": endFunction,
@@ -217,8 +228,6 @@ module.exports = {
   },
 };
 ```
-
-`meta`는 규칙에 대한 메타데이터 정보를 담고 있다.
 
 - **`type`** : 규칙의 유형
   - **problem** : 코드에 오류가 발생할 수 있는 규칙을 사용했을 때
