@@ -91,7 +91,7 @@ In some situations, not all type information is available or its declaration wou
         
         ![image.png](image/image_2.png)
         
-        - tscofig의 기본 strict 모드에 `noImplicityAny`가 포함되어 잇긴 하다.
+        - tscofig의 기본 strict 모드에 `noImplicityAny`가 포함되어 있긴 하다.
             
             ![image.png](image/image_3.png)
             
@@ -132,7 +132,34 @@ The `unknown` type represents *any* value. This is similar to the `any` ty
         ```
         
         ⇒ 타입을 점검하여 파싱 후 사용.
+    - 타입의 메소드를 바로 사용하지 못한다. 점검이 필요하다.
+      
+        ``` 
+        // 에러 발생 케이스
+        function errorUnknown(){
+        let unknownType1 : unknown = "String"
+        let unknownType2 : unknown = 2
+        console.log(unknownType1.toUpperCase())
+        console.log(unknownType2.toFixed(2))
+        } 
         
+        // Type narrowing을 통한 메소드 사용법
+        let unknownType1 : unknown = "String"
+        let unknownType2 : unknown = 2
+        
+        function checkType(v : unknown){
+        if(typeof v == "string"){
+        console.log(v.toUpperCase())
+        }
+        if(typeof v == "number"){
+        console.log(v.toFixed())
+        }
+        }
+        
+        checkType(unknownType1)
+        checkType(unknownType2)
+        
+
 
 ---
 
