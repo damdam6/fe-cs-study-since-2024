@@ -152,7 +152,7 @@ console.log("All tests passed!");
 $ npm test
 ```
 
-![test](./images/testpass.png)
+![test](https://github.com/dolmeengii/fe-cs-study/blob/b15560576c656d63c5c84be4434ed34f2738c842/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/testpass.png)
 테스트가 실행되면 위 이미지와 같은 결과가 터미널에 표시된다.
 
 #### 6️⃣ 플러그인에 사용자 정의 규칙 번들링
@@ -185,13 +185,15 @@ export default [
   {
     files: ["**/*.js"],
     languageOptions: {
-      sourceType: "commonjs",
+      sourceType: "module",
       ecmaVersion: "latest",
     },
-    // Using the eslint-plugin-example plugin defined locally
-    plugins: { example: eslintPluginExample },
+
+    plugins: {
+      dolmeengii: eslintPluginDolmeengii,
+    },
     rules: {
-      "example/enforce-foo-bar": "error",
+      "dolmeengii/enforce-dolmeengii-dolmeengii": "error",
     },
   },
 ];
