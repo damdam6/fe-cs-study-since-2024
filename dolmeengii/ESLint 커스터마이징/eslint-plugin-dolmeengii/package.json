@@ -1,0 +1,16 @@
+{
+  "name": "eslint-plugin-dolmeengii",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/enforce-dolmeengii-dolmeengii.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.14.0"
+  }
+}
