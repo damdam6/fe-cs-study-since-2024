@@ -13,7 +13,6 @@ ESLint 공식문서에서 제공하는 방식을 따라 커스터마이징을 �
 $ mkdir eslint-plugin-dolmeengii
 $ cd eslint-plugin-dolmeengii
 $ npm init -y
-$ touch enforce-dolmeengii-dolmeengii.js
 ```
 
 <br>
@@ -21,15 +20,25 @@ $ touch enforce-dolmeengii-dolmeengii.js
 #### 2️⃣ 커스텀 룰 만들기
 
 나는 **변수 `dolmeengii` 가 무조건 값으로 `dolmeengii`를 가질 수 있도록 하는 규칙**을 만들고자 한다.  
-디렉토리에 enforce-dolmeengii-dolmeengii.js 라는 파일을 생성해주고, 아래와 같이 규칙을 정의한 코드를 작성한다.
+디렉토리에 enforce-dolmeengii.js 라는 파일을 생성해주고, 아래와 같이 규칙을 정의한 코드를 작성한다.
+
+```bash
+$ mkdir lib
+$ cd lib
+$ touch index.js
+$ mkdir rules
+$ touch enforce-dolmeengii.js
+```
+
+여기서 index.js 는 추후에 json 에서 entry 포인트로 사용될 파일이다. 폴더 구조를 미리 짜임새 있게 작성해준다.
 
 ```js
-const dolmeengiiRule = {
+module.exports = {
   meta: {
     type: "problem",
     docs: {
       description:
-        "Enforce that a variable named `dolmeengii` can only be assigned a value of 'dolmeegii'.",
+        "Enforce that a variable named `dolmeengii` can only be assigned a value of 'dolmeengii'.",
     },
     fixable: "code",
     schema: [],
@@ -47,7 +56,7 @@ const dolmeengiiRule = {
               context.report({
                 node,
                 message:
-                  'const 로 정의한 변수 이름이 dolmeengii 라면 문자열 "dolmeengii" 이외에는 값을 사용할 수 없다.',
+                  'Value other than "dolmeengii" assigned to `const dolmeengii`. Unexpected value: {{ notDolmeengii }}.',
                 data: {
                   notDolmeengii: node.init.value,
                 },
@@ -62,8 +71,6 @@ const dolmeengiiRule = {
     };
   },
 };
-
-export default dolmeengiiRule;
 ```
 
 <br>
@@ -71,14 +78,16 @@ export default dolmeengiiRule;
 #### 3️⃣ 테스트 파일 설정하기
 
 enforce-dolmeengii-dolmeengii 가 잘 동작하는지 확인하는 테스트 코드를 작성해야 한다.
+루트 디렉토리 아래에 test 폴더를 만들어준다.
 
 ```bash
-$ touch enforce-dolmeegnii-dolmeengii.test.js
+$ mkdir tests
+$ touch enforce-dolmeegnii.test.js
 ```
 
 위 명령어를 입력하여 테스트 파일을 만들어준다.
 
-또한 테스트 파일에서 eslint 패키지를 사용해야 하므로 아래의 명령어를 입력한다.
+또한 테스트 파일에서 eslint 패키지를 사용해야 하므로 루트 디렉토리 아래에서 다음의 명령어를 입력한다.
 
 ```bash
 $ npm install eslint --save-dev
@@ -93,9 +102,9 @@ $ npm install eslint --save-dev
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "index.js",
+  "main": " lib/index.js",
   "scripts": {
-    "test": "node tests/enforce-dolmeengii-dolmeengii.test.js"
+    "test": "node tests/enforce-dolmeengii.test.js"
   },
   "keywords": [],
   "author": "",
@@ -111,29 +120,27 @@ $ npm install eslint --save-dev
 #### 4️⃣ 테스트 코드 작성하기
 
 ```js
-// enforce-dolmeengii-dolmeengii.test.js
-import { RuleTester } from "eslint";
-import dolmeengiiRule from "../rules/enforce-dolmeengii-dolmeengii.js";
+// enforce-dolmeengii.test.js
+const { RuleTester } = require("eslint");
+const dolmeengiiRule = require("../lib/rules/enforce-dolmeengii");
 
 const ruleTester = new RuleTester({
   languageOptions: { ecmaVersion: 2015 },
 });
 
 ruleTester.run(
-  "enforce-dolmeengii-dolmeengii", // rule name
+  "enforce-dolmeengii", // rule name
   dolmeengiiRule, // rule code
   {
     // checks
-    // 'valid' checks cases that should pass
     valid: [
       {
         code: "const dolmeengii = 'dolmeengii';",
       },
     ],
-    // 'invalid' checks cases that should not pass
     invalid: [
       {
-        code: "const dolmeengii = 'dolli';",
+        code: "const dolmeengii = 'dola';",
         output: 'const dolmeengii = "dolmeengii";',
         errors: 1,
       },
@@ -152,17 +159,17 @@ console.log("All tests passed!");
 $ npm test
 ```
 
-![test](https://github.com/dolmeengii/fe-cs-study/blob/b15560576c656d63c5c84be4434ed34f2738c842/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/testpass.png)
+![test](./images/passtest.png)
 테스트가 실행되면 위 이미지와 같은 결과가 터미널에 표시된다.
 
 #### 6️⃣ 플러그인에 사용자 정의 규칙 번들링
 
-index.js 파일을 생성한 후 다음과 같이 작성한다.
+생성해두었던 index.js 파일에 이렇게 작성한다.
 
 ```js
-import dolmeengiiRule from "./eslint-plugin-dolmeengii/rules/enforce-dolmeengii-dolmeengii.js";
-const plugin = { rules: { "enforce-dolmeengii-dolmeengii": dolmeengiiRule } };
-export default plugin;
+const dolmeengiiRule = require("./rules/enforce-dolmeengii");
+const plugin = { rules: { "enforce-dolmeengii": dolmeengiiRule } };
+module.exports = plugin;
 ```
 
 #### 7️⃣ 플러그인을 로컬에서 사용하기
@@ -179,21 +186,19 @@ $ touch eslint.config.js
 "use strict";
 
 // Import the ESLint plugin locally
-import eslintPluginExample from "./eslint-plugin-example";
+const eslintPluginDolmeengii = require("./lib/index");
 
-export default [
+module.exports = [
   {
     files: ["**/*.js"],
     languageOptions: {
-      sourceType: "module",
+      sourceType: "commonjs",
       ecmaVersion: "latest",
     },
-
-    plugins: {
-      dolmeengii: eslintPluginDolmeengii,
-    },
+    // Using the eslint-plugin-dolmeengii plugin defined locally
+    plugins: { dolmeengii: eslintPluginDolmeengii },
     rules: {
-      "dolmeengii/enforce-dolmeengii-dolmeengii": "error",
+      "dolmeengii/enforce-dolmeengii": "error",
     },
   },
 ];
@@ -208,7 +213,7 @@ function correctDolmeengii() {
 }
 
 function incorrectDolmeengii() {
-  const dolmeegii = "dlin"; // Problem!
+  const dolmeengii = "dola";
 }
 ```
 
@@ -218,11 +223,78 @@ function incorrectDolmeengii() {
 $ npx eslint example.js
 ```
 
-> 결과가 터미널에 떠야 하는데 안 떠서 최종본 업로드 까지 수정하겠음
+![로컬테스트](./images/localtest.png)
 
-테스트를 실행하고 잘 적용이 되면 프로젝트에 적용하여 사용하면 된다.
+#### 8️⃣ npm에 배포하기
+
+배포를 위해 package.json 파일을 정리해주자.
+
+```json
+{
+  "name": "eslint-plugin-dolmeengii",
+  "version": "1.0.0",
+  "description": "ESLint plugin for enforce-dolmeengii rule.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/enforce-dolmeengii.test.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  },
+  "keywords": ["eslint", "eslintplugin", "eslint-plugin"],
+  "author": "dolmeengii",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.15.0"
+  }
+}
+```
+
+> `name`: 패키지의 고유한 이름으로, npm의 다른 패키지는 같은 이름을 가질 수 없다. <br> > `main`: 플러그인 파일에 대한 상대 경로이며 entry point가 되는 파일을 넣어주면 된다. <br> > `description`: npm에서 볼 수 있는 패키지 설명이다. <br> > `peerDependencies: "eslint": ">=9.0.0`: 피어 종속성으로 추가함. 플러그인을 사용하려면 해당 버전 이상이어야 한다는 것을 명시. eslint피어 종속성으로 선언하려면 사용자가 플러그인과 별도로 프로젝트에 패키지를 추가해야 한다. <br> > `keywords`: 패키지를 쉽게 찾을 수 있도록 표준 키워드를 포함해준다. ["eslint", "eslintplugin", "eslint-plugin"]. 플러그인과 관련이 있을 수 있는 다른 키워드도 추가할 수 있다.
+
+npm에 플러그인을 게시하기 위해 https://www.npmjs.com/ 이곳에서 회원가입을 진행해주어야 한다.
+
+회원가입이 완료되었다면 터미널에서 다음의 명령어를 입력한다.
+
+```bash
+$ npm adduser username// 유저 정보 - username 부분에 npm 닉네임을 입력한다.
+$ npm publish
+```
+
+만약 터미널에 error가 반환된다면 publish 에 실패한 것이다.
 
 ---
+
+#### ✅ 직접 사용해보기
+
+다른 프로젝트를 만들어 직접 사용해보았다.
+
+```bash
+npm install eslint-plugin-dolmeengii --save-dev
+```
+
+```js
+// eslint.confing.js
+```
+
+js 파일을 하나 만들어 다음과 같이 입력한다.
+![예시](./images/%EC%98%88%EC%8B%9C1.png)
+그리고 eslint 실행 명령어를 입력해준다.
+
+```bash
+$ npx eslint main.js
+```
+
+실행을 하면 다음과 같은 오류가 발생한다.
+![error](./images/main.png)
+터미널에 다음과 같이 입력한다.
+
+```bash
+$ npx eslint main.js --fix
+```
+
+그렇게 하면 main.js 파일의 코드가 올바르게 고쳐지는 모습을 확인할 수 있다.
+![예시](./images/%EC%98%88%EC%8B%9C2.png)
 
 ---
 
