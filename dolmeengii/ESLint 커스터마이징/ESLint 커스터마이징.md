@@ -77,7 +77,7 @@ module.exports = {
 
 #### 3️⃣ 테스트 파일 설정하기
 
-enforce-dolmeengii-dolmeengii 가 잘 동작하는지 확인하는 테스트 코드를 작성해야 한다.
+enforce-dolmeengii 가 잘 동작하는지 확인하는 테스트 코드를 작성해야 한다.
 루트 디렉토리 아래에 test 폴더를 만들어준다.
 
 ```bash
