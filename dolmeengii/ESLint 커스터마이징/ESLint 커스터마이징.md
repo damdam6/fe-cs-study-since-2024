@@ -289,8 +289,9 @@ module.exports = {
 };
 ```
 
-js 파일을 하나 만들어 다음과 같이 입력한다.
+js 파일을 하나 만들어 다음과 같이 입력한다.<br>
 ![예시](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/example1.png)
+<br>
 그리고 eslint 실행 명령어를 입력해준다.
 
 ```bash
