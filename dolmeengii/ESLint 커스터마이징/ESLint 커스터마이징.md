@@ -275,6 +275,18 @@ npm install eslint-plugin-dolmeengii --save-dev
 
 ```js
 // eslint.confing.js
+"use strict";
+
+const dolmeengii = require("eslint-plugin-dolmeengii");
+
+module.exports = {
+  plugins: {
+    dolmeengii,
+  },
+  rules: {
+    "dolmeengii/enforce-dolmeengii": "error",
+  },
+};
 ```
 
 js 파일을 하나 만들어 다음과 같이 입력한다.
