@@ -159,7 +159,7 @@ console.log("All tests passed!");
 $ npm test
 ```
 
-![test](https://github.com/dolmeengii/fe-cs-study/blob/6adac05716c1dc42034f7ba06259b2a0681caf90/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/passtest.png))
+![test](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/passtest.png)
 테스트가 실행되면 위 이미지와 같은 결과가 터미널에 표시된다.
 
 #### 6️⃣ 플러그인에 사용자 정의 규칙 번들링
@@ -223,7 +223,7 @@ function incorrectDolmeengii() {
 $ npx eslint example.js
 ```
 
-![로컬테스트](https://github.com/dolmeengii/fe-cs-study/blob/6adac05716c1dc42034f7ba06259b2a0681caf90/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/localtest.png)
+![로컬테스트](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/localtest.png)
 
 #### 8️⃣ npm에 배포하기
 
@@ -290,7 +290,7 @@ module.exports = {
 ```
 
 js 파일을 하나 만들어 다음과 같이 입력한다.
-![예시](https://github.com/dolmeengii/fe-cs-study/blob/6adac05716c1dc42034f7ba06259b2a0681caf90/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/example1.png)
+![예시](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/example1.png)
 그리고 eslint 실행 명령어를 입력해준다.
 
 ```bash
@@ -298,7 +298,7 @@ $ npx eslint main.js
 ```
 
 실행을 하면 다음과 같은 오류가 발생한다.
-![error](https://github.com/dolmeengii/fe-cs-study/blob/6adac05716c1dc42034f7ba06259b2a0681caf90/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/main.png)
+![error](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/main.png)
 터미널에 다음과 같이 입력한다.
 
 ```bash
@@ -306,7 +306,7 @@ $ npx eslint main.js --fix
 ```
 
 그렇게 하면 main.js 파일의 코드가 올바르게 고쳐지는 모습을 확인할 수 있다.
-![예시](https://github.com/dolmeengii/fe-cs-study/blob/6adac05716c1dc42034f7ba06259b2a0681caf90/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/example2.png)
+![예시](https://github.com/dolmeengii/fe-cs-study/blob/aa61d8e08031e53f0a48d14a6af30b1a175187ab/dolmeengii/ESLint%20%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95/images/example2.png)
 
 ---
 
