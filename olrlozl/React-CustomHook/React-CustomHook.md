@@ -25,7 +25,7 @@
 
 ## 3.  커스텀 훅(Custom Hook)의 사용 예시
 
-1. **API 호출 관리 (`useFetc`**
+1. **API 호출 관리 (`useFetch`)**
     
     ```jsx
     import { useState, useEffect } from "react";
