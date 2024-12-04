@@ -18,7 +18,7 @@
 
 ### SSR의 동작 과정
 
-![SSR의 동작 과정]()
+![SSR의 동작 과정](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week15/bloblog/SSR%EA%B3%BC%20%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9/image/image%20(2).png?raw=true>)
 
 1. 사용자가 URL을 입력하거나 링크를 클릭하여 서버에 요청
 2. 서버는 받은 url을 기준으로 어떤 페이지를 렌더링할 지 결정
@@ -55,7 +55,7 @@
 - 서버에서 HTTP 요청 헤더의`User-Agent`를 기반으로 디바이스 정보를 유추하여 초기 화면에 반영 가능
 - User-Agent 예시
 
-  ![User-Agent]()
+  ![User-Agent](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week15/bloblog/SSR%EA%B3%BC%20%EB%B0%98%EC%9D%91%ED%98%95%EC%9B%B9/image/image%20(3).png?raw=true>)
 
 ```jsx
 export async function getServerSideProps(context) {
