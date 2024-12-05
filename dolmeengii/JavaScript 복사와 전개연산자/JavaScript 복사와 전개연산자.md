@@ -2,9 +2,7 @@
 
 ## 1. JavaScript의 복사
 
-### 1) 얕은 복사와 깊은 복사
-
-#### 얕은 복사(Shallow Copy)
+### 1) 얕은 복사(Shallow Copy)
 
 얕은 복사는 객체의 최상위 속성만 복사하고, 중첩된 객체는 원본 객체와 같은 참조를 유지한다.
 
@@ -20,7 +18,9 @@ console.log(original.b.c); // 3 (원본도 변경됨)
 
 위의 예에서 `copy`는 `original`의 얕은 복사본이다. copy의 b 속성은 original의 b 속성과 같은 객체를 참조하므로 copy.b.c를 수정하면 original.b.c도 영향을 받는다.
 
-#### 깊은 복사(Deep Copy)
+<br>
+
+### 2) 깊은 복사(Deep Copy)
 
 깊은 복사는 객체의 모든 중첩된 속성까지 복사하여 원본 객체와 완전히 독립적인 복사본을 생성한다. JavaScript에서 깊은 복사를 수행하려면 일반적으로 다음과 같은 방법을 사용한다.
 
@@ -39,10 +39,69 @@ console.log(original.b.c); // 2 (원본은 변경되지 않음)
 ```
 
 **2️⃣ 재귀 함수** <br>
-객체의 모든 속성을 재귀적으로 복사하는 함수를 작성하여 깊은 복사를 수행할 수 있다.
+객체의 모든 속성을 재귀적으로 복사하는 함수를 작성하여 깊은 복사를 수행할 수 있다. 이 방법은 객체의 타입을 확인하고, 중첩된 객체에 대해 재귀적으로 호출하여 복사한다.
+
+```js
+function deepCopy(obj) {
+  // null 또는 원시 타입인 경우 그대로 반환
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  // 배열인지 확인
+  if (Array.isArray(obj)) {
+    const arrCopy = [];
+    for (let item of obj) {
+      arrCopy.push(deepCopy(item)); // 재귀 호출
+    }
+    return arrCopy;
+  }
+
+  // 객체인 경우
+  const copy = {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      copy[key] = deepCopy(obj[key]); // 재귀 호출
+    }
+  }
+  return copy;
+}
+
+// 사용 예시
+const original = { a: 1, b: { c: 2, d: [3, 4] } };
+const deepCopyObj = deepCopy(original);
+
+deepCopyObj.b.c = 3;
+deepCopyObj.b.d[0] = 5;
+
+console.log(original.b.c); // 2 (원본은 변경되지 않음)
+console.log(original.b.d[0]); // 3 (원본은 변경되지 않음)
+```
 
 **3️⃣ 라이브러리 사용** <br>
-Lodash와 같은 라이브러리에서 제공하는 cloneDeep 함수를 사용하여 깊은 복사를 수행할 수 있다.
+Lodash와 같은 라이브러리에서 제공하는 cloneDeep 함수를 사용하여 깊은 복사를 수행할 수 있다. Lodash를 사용하면 복잡한 객체 구조도 간단하게 깊은 복사를 할 수 있다.
+
+먼저 Lodash를 설치해야 한다. Node.js 환경에서는 다음과 같이 설치할 수 있다.
+
+```bash
+npm install lodash
+```
+
+그 다음, `cloneDeep` 함수를 사용하여 깊은 복사를 수행할 수 있다.
+
+```javascript
+const _ = require("lodash");
+
+// 사용 예시
+const original = { a: 1, b: { c: 2, d: [3, 4] } };
+const deepCopyObj = _.cloneDeep(original);
+
+deepCopyObj.b.c = 3;
+deepCopyObj.b.d[0] = 5;
+
+console.log(original.b.c); // 2 (원본은 변경되지 않음)
+console.log(original.b.d[0]); // 3 (원본은 변경되지 않음)
+```
 
 <br>
 <br>
