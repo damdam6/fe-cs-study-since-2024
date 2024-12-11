@@ -140,7 +140,7 @@ https://react-dnd.github.io/react-dnd/docs/overview
 
 ### 리스트 순서 재배치
 
-![순서재배치.gif]()
+![순서재배치.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week16/bloblog/%EB%93%9C%EB%9E%98%EA%B7%B8%EC%95%A4%EB%93%9C%EB%A1%AD/image/%EC%88%9C%EC%84%9C%EC%9E%AC%EB%B0%B0%EC%B9%98.gif?raw=true)
 
 - 리스트 컴포넌트
 
@@ -212,7 +212,7 @@ https://react-dnd.github.io/react-dnd/docs/overview
 
 ### 자유 배치
 
-![자유배치.gif]()
+![자유배치.gif](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week16/bloblog/%EB%93%9C%EB%9E%98%EA%B7%B8%EC%95%A4%EB%93%9C%EB%A1%AD/image/%EC%9E%90%EC%9C%A0%EB%B0%B0%EC%B9%98.gif?raw=true)
 
 - 메모지 컴포넌트
 
