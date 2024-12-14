@@ -182,3 +182,7 @@ unsubscribe();
 store.dispatch({ type: 'INCREMENT' }); // 아무 출력도 없음
 
 ```
+
+## 참고
+- https://www.frontoverflow.com/document/1/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EB%8D%95%EC%8A%A4%20(Redux)
+- https://react.vlpt.us/redux/
