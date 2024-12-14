@@ -96,7 +96,7 @@ function counter(state, action) {
 
 ## Redux의 데이터 흐름
 
-![redux_data_flow](./redux_data_flow.gif)
+![redux_data_flow](https://raw.githubusercontent.com/damdam6/fe-cs-study-2024/5ddfad95c52a510072bf378fe961c985f132c4d3/olrlozl/React-Redux/gif/redux_data_flow.gif)
 
 1. 먼저 사용자가 UI에서 Deposit 10$ 버튼을 누른다
 2. 그러면 클릭 이벤트가 이벤트 핸들러로 전달이 되고, `Action`이 만들어지고 `Dispatch`된다
