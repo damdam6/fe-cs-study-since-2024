@@ -183,6 +183,20 @@ store.dispatch({ type: 'INCREMENT' }); // 아무 출력도 없음
 
 ```
 
+## Redux의 단점
+
+- **보일러플레이트 코드가 많음**
+    - **Redux**는 `action`, `reducer`, `store`를 분리해 작성해야 하므로 코드가 길어지고 관리가 복잡해질 수 있다.
+- **초기 설정의 복잡성**
+    - Redux는 `createStore`, `combineReducers`, 미들웨어 설정 등 초기 작업이 많다.
+- **비동기 작업의 복잡성**
+    - Redux는 비동기 로직을 처리하기 위해 Redux-Thunk, Redux-Saga와 같은 미들웨어를 별도로 설정해야 하며, 이로 인해 코드 복잡도가 증가한다.
+- **성능 문제**
+    - Redux는 상태 변경 시 모든 구독된 컴포넌트가 다시 렌더링될 가능성이 있어 성능 최적화가 필요하다. 이를 방지하려면 `connect`, `useSelector`, `memo` 등을 적극 활용해야 한다.
+- **러닝 커브**
+    - Redux는 액션, 리듀서, 미들웨어의 구조를 이해하고 설정하는 데 학습 곡선이 높다.
+ 
+      
 ## 참고
 - https://www.frontoverflow.com/document/1/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EB%8D%95%EC%8A%A4%20(Redux)
 - https://react.vlpt.us/redux/
