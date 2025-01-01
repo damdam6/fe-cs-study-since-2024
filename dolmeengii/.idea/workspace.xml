@@ -30,7 +30,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "File.Encoding",
     "settings.editor.splitter.proportion": "0.26028922",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729851634794</updated>
       <workItem from="1729851635825" duration="851000" />
-      <workItem from="1735727606793" duration="2470000" />
+      <workItem from="1735727606793" duration="2741000" />
     </task>
     <task id="LOCAL-00001" summary="chore(week17): 문서 수정">
       <option name="closed" value="true" />
