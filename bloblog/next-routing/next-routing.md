@@ -11,7 +11,7 @@
 
 그리고 딱 보기에도 코드가 상당히 지저분해 보인다.
 
-![routing.png]()
+![routing.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/routing.png?raw=true)
 
 그래서 오직 페이지 라우팅만을 위해 Next.js를 도입해보려고 한다.
 
@@ -45,7 +45,7 @@ project/
 
 위 폴더 구조를 기반으로 어느 정도 형태는 갖추게 되었다.
 
-![dir1.png]()
+![dir1.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/dir1.png?raw=true)
 
 하지만 여기서 궁금증이 생겼다.
 
@@ -57,7 +57,7 @@ React 프로젝트의 메인이 되는 `main.js` 나 `App.js`, `index.html` 을 
 
 그래서 최종 폴더 구조는 다음과 같다.
 
-![dir2.png]()
+![dir2.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/dir2.png?raw=true)
 
 ### 그런데 왜 기존 파일들이 필요가 없을까?
 
@@ -140,9 +140,9 @@ React에서 애플리케이션의 진입점으로 사용된다.
 
 `npm run dev` 명령어로 실행하면 잘 돌아가는 것을 볼 수 있다.
 
-![home.png]()
+![home.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/home.png?raw=true)
 
-![postList.png]()
+![postList.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/postList.png?raw=true)
 
 ## 동적 라우팅은?
 
