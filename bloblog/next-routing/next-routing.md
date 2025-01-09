@@ -11,7 +11,7 @@
 
 그리고 딱 보기에도 코드가 상당히 지저분해 보인다.
 
-![routing.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/routing.png?raw=true)
+![routing.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week18/bloblog/next-routing/image/routing.png?raw=true)
 
 그래서 오직 페이지 라우팅만을 위해 Next.js를 도입해보려고 한다.
 
