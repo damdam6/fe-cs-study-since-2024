@@ -12,6 +12,14 @@
 | week 08 |            리액트 Hook            |      ✅      |     ✅      |
 | week 09 |          API 호출 최적화          |      ✅      |     ✅      |
 | week 10 | useDefferredValue와 useTransition |      ✅      |     ✅      |
-| week 11 |       MVVM 패턴과 Flux 패턴       |      ✅      |             |
+| week 11 |       MVVM 패턴과 Flux 패턴       |      ✅      |     ✅      |
+| week 12 |     Javascript 와 SOLID 원칙      |      ✅      |     ✅      |
+| week 13 |        HTTP메서드와 멱등성        |      ✅      |     ✅      |
+| week 14 |             반응형 웹             |      ✅      |     ✅      |
+| week 15 |          SSR과 반응형 웹          |      ✅      |     ✅      |
+| week 16 |       드래그앤드롭 구현하기       |      ✅      |     ✅      |
+| week 17 |    Javascript 코딩테스트 대비     |      ✅      |     ✅      |
+| week 18 |       NEXT.JS 페이지 라우팅       |      ✅      |     ✅      |
+| week 19 |                PWA                |      ✅      |             |
 
 > 완료시 ✅
