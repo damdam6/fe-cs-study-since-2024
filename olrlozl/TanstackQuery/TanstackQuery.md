@@ -1,4 +1,4 @@
-# Transtack Query (React Query)
+# Tanstack Query (React Query)
 
 ## 소개
 
