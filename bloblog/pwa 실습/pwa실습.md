@@ -128,7 +128,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-![sw.png]()
+![sw.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week20/bloblog/pwa%20%EC%8B%A4%EC%8A%B5/image/sw.png?raw=true)
 
 ## 캐싱 / 오프라인 기능 실습
 
@@ -199,7 +199,7 @@ export default function About({ message }) {
 }
 ```
 
-![static.png]()
+![static.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week20/bloblog/pwa%20%EC%8B%A4%EC%8A%B5/image/static.png?raw=true)
 
 - 오프라인 상태일 때도 페이지 정상 로딩됨
 - `my-cache-v1` 정상적으로 저장됨
@@ -297,9 +297,9 @@ export default function Home() {
 }
 ```
 
-![dynamic.png]()
+![dynamic.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week20/bloblog/pwa%20%EC%8B%A4%EC%8A%B5/image/dynamic.png?raw=true)
 
-![dynamic-cache.png]()
+![dynamic-cache.png](https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week20/bloblog/pwa%20%EC%8B%A4%EC%8A%B5/image/dynamic-cache.png?raw=true)
 
 - 오프라인 상태에서도 캐싱된 데이터 사용하여 렌더링
 - `dynamic-cache-v1` 캐시 정상적으로 저장됨
