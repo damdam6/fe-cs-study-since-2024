@@ -4,7 +4,7 @@
 
 모든 리액트 컴포넌트에는 라이프사이클(생명주기)이 존재한다. 컴포넌트의 수명은 페이지에 렌더링 되기 전인 준비과정에서 시작하여 페이지에서 사라질 때 끝난다.
 
-![컴포넌트의 라이프사이클](./images/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4.png)
+![컴포넌트의 라이프사이클](https://github.com/dolmeengii/fe-cs-study/blob/74f24dc549b30d58c2697875c16ae8841413e4d8/dolmeengii/React%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/images/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4.png)
 
 > **컴포넌트의 라이프사이클**
 >
@@ -26,7 +26,7 @@
 
 위에서 말했듯이 마운트는 DOM이 생성되고 웹 브라우저에 컴포넌트가 나타나는 것을 말한다. 이때 호출하는 메서드를 살펴 보자.
 
-![mount method](./images/mount.png)
+![mount method](https://github.com/dolmeengii/fe-cs-study/blob/74f24dc549b30d58c2697875c16ae8841413e4d8/dolmeengii/React%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/images/mount.png)
 
 - constructor: 컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자 메서드
 - getDerivedStateFromProps: props에 있는 값을 state에 넣을 때 사용하는 메서드
@@ -44,7 +44,7 @@
 3. 부모 컴포넌트가 리렌더링 될 때
 
 위와 같이 컴포넌트가 업데이트될 때에 호출하는 메서드를 알아보자.
-![update method](./images/update.png)
+![update method](https://github.com/dolmeengii/fe-cs-study/blob/74f24dc549b30d58c2697875c16ae8841413e4d8/dolmeengii/React%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/images/update.png)
 
 - getDerivedStateFromProps: 마운트 과정에서도 호출되는 메서드로, 업데이트를 시작하기 전에도 호출이 된다. props의 변화에 따라 state 에도 변화를 주고 싶을 때 사용한다.
 - shouldComponentUpdate: 컴포넌트가 리렌더링을 해야 할지 말아야 할지 결정하는 메서드로, true/false 값을 반환한다.
@@ -60,7 +60,7 @@
 
 컴포넌트가 DOM에서 사라질 때는 어떤 메소드를 호출하는지 알아보자.
 
-![unmount mthod](./images/unmount.png)
+![unmount mthod](https://github.com/dolmeengii/fe-cs-study/blob/74f24dc549b30d58c2697875c16ae8841413e4d8/dolmeengii/React%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C/images/unmount.png)
 
 - componentWillUnmount: 컴포넌트가 웹 브라우저상에서 사라지기 전에 호출하는 메서드이다.
 
