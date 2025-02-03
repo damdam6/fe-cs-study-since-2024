@@ -81,7 +81,7 @@ describe('Button Component Test', () => {
 - cy.contains('Clicke me')
   - DOM에서 특정 텍스트("Click me") 를 가진 요소를 검색함
 - cy.contains('Clicked').should('be.visible');
-  - "Clicked" f=라는 텍스트를 가진 요소가 화면에 보이는지 검증.
+  - "Clicked" 라는 텍스트를 가진 요소가 화면에 보이는지 검증.
   - should는 assertion 메소드로 원하는 상태 (visible, exist)를 확인함
   - 브라우저에서 UI 상태를 확인하는데 사용됨
 - describe / it
