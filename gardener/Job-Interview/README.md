@@ -4,7 +4,7 @@
 무엇을 해야할지 고민하다가, 이전에 즐겨찾기로 등록해놓은 프론트엔드 기출면접 20선에서 확실히 알았으면 하는 개념에 대해 5가지를 들고왔다.
 
 ## 1. 해당 프레임워크를 선택한 이유 (React, Vue, Next.js)
-<img src="https://s3.ap-northeast-2.amazonaws.com/blog.spartacodingclub.kr/1723373729088-Frame%201000007939.png" />
+<img src="https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/waszdxb6gy1n9x3sfroi/design-web-ui-in-react-js-next-js-angular-js-or-vue-js.png" />
 프론트엔드 개발에서 FrameWork를 선택하는 이유는 개발 생산성, 성능 최적화, 커뮤니티 지원, 유지보수성 등의 이유 때문이다.
 
 1. React
