@@ -307,7 +307,7 @@ export default App;
 
 ![컴포넌트 라이프사이클 메서드의 흐름](https://github.com/dolmeengii/fe-cs-study/blob/465d1562a1eb58ee705faf1cb9c832bf7a295af4/dolmeengii/React%EC%9D%98%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/images/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C%20%ED%9D%90%EB%A6%84.png)
 
-라이프사이클 메서드는 컴포넌트의 상태에 변화가 있을 때마다 실행하는 메서드이다. 이 메서드듣ㄹ은 서드파티 라이브러리를 사용하거나 DOM을 직접 건드려야 하는 상황에서 유용하다. 추가로 컴포넌트의 업데이트 성능을 개선할 때는 `shouldComponentUpdate`가 중요하게 사용되는데 이는 추후에 다뤄보도록 하겠다.
+라이프사이클 메서드는 컴포넌트의 상태에 변화가 있을 때마다 실행하는 메서드이다. 이 메서드들은 서드파티 라이브러리를 사용하거나 DOM을 직접 건드려야 하는 상황에서 유용하다. 추가로 컴포넌트의 업데이트 성능을 개선할 때는 `shouldComponentUpdate`가 중요하게 사용되는데 이는 추후에 다뤄보도록 하겠다.
 
 <br>
 
