@@ -8,7 +8,7 @@ https://console.firebase.google.com/u/0/?hl=ko
 
 ### 웹 앱에 Firebase 추가
 
-![sdk.png]()
+![sdk.png](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week21/bloblog/pwa%EC%8B%A4%EC%8A%B5(2)/image/sdk.png?raw=true>)
 
 - Firebase 초기화
 
@@ -182,12 +182,12 @@ export default function App({ Component, pageProps }) {
 
 - 콘솔에 찍힌 FCM 토큰 등록해서 테스트 메시지 전송
 
-![test.png]()
+![test.png](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week21/bloblog/pwa%EC%8B%A4%EC%8A%B5(2)/image/test.png?raw=true>)
 
-![token.png]()
+![token.png](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week21/bloblog/pwa%EC%8B%A4%EC%8A%B5(2)/image/token.png?raw=true>)
 
 ### 성공!
 
-![success.png]()
+![success.png](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week21/bloblog/pwa%EC%8B%A4%EC%8A%B5(2)/image/success.png?raw=true>)
 
-![console.png]()
+![console.png](<https://github.com/bloblog/fe-cs-study-2024/blob/bloblog-week21/bloblog/pwa%EC%8B%A4%EC%8A%B5(2)/image/console.png?raw=true>)
