@@ -67,3 +67,17 @@ revalidateTag('collection');
 ```
 
 <img src='https://nextjs.org/_next/image?url=%2Fdocs%2Flight%2Fon-demand-revalidation.png&w=3840&q=75' alt='on-demand-revalidation' />
+
+## `Next.js 15`에서 쿼리스트링(Query String)이 포함된 요청의 캐싱 동작
+
+### 🚀 1. 라우트 수준(Route-level) 캐싱:
+
+`dynamic = "force-static"`을 사용하면, 쿼리스트링이 달라도 동일한 경로는 같은 캐시를 사용합니다.
+
+- 즉, `/page?filter=a`와 `/page?filter=b`는 같은 정적 페이지 캐시를 반환합니다.
+
+### ⚡ 2. fetch() 수준(Fetch-level) 캐싱:
+
+쿼리스트링이 포함된 `fetch()` 요청은 쿼리스트링마다 별도로 캐싱됩니다.
+
+- 즉, `fetch('/api/data?filter=a')`와 `fetch('/api/data?filter=b')`는 다른 캐시 키를 가집니다.
