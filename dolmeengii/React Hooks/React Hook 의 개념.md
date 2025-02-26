@@ -141,7 +141,7 @@ React 공식 문서에 따르면 Hook은 그냥 JavaScript 함수이지만, 다�
 > ✅ 함수 컴포넌트의 본문 최상위 레벨에서 호출하세요.   
 > ✅ 커스텀 Hook의 본문 최상위 레벨에서 호출하세요.
 > 
-> ![최상위 레벨 호출](./images/callRoot.png)
+> ![최상위 레벨 호출](https://github.com/dolmeengii/fe-cs-study/blob/8cfe62401089e2166713058b524a18f13d6a2321/dolmeengii/React%20Hooks/images/callRoot.png)
 
 리액트 공식문서에 있는 설명을 옮겨왔다. 이 설명만 봤을 때는 왜 오류가 생기는지 알 수 없다. 그래서 구조적인 원리에 의한 문제점이 어떤 것들이 있는지 직접 찾아봤다.
 
