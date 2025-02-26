@@ -12,15 +12,8 @@ React Hook은 함수형 컴포넌트에서 상태(state)와 생명주기(lifecyc
 
 React 공식 문서에 따르면 React Hook은 버전 16.8에 도입되어 사용되어 왔고, Hook이 추가되기 전에는 Class 바탕의 코드를 작성하여 구현했다고 한다. 클래스를 사용한 코드와, Hook을 사용한 코드에는 어떤 차이점이 있는지, 왜 Hook이 도입되었는지 알아보자.
 
-<table>
-	<tr>
-        <th> 비교 문항 </th>
-		<th> Class 사용 코드</th>
-		<th> Hook 사용 코드 </th>
-	</tr>
-	<tr>
-        <td>코드</td>
-		<td><pre><code>
+#### Class 사용 코드
+```js
 import React, { Component } from 'react';
 
 class Counter extends Component {
@@ -30,78 +23,80 @@ class Counter extends Component {
             count: 0
         };
     }
+    
     componentDidMount() {
         // 컴포넌트가 마운트될 때 실행
         console.log('Counter mounted');
     }
+    
     componentDidUpdate(prevProps, prevState) {
         // 상태가 업데이트될 때 실행
         if (prevState.count !== this.state.count) {
             console.log(`Count updated to: ${this.state.count}`);
         }
     }
+    
     componentWillUnmount() {
         // 컴포넌트가 언마운트될 때 실행
         console.log('Counter will unmount');
     }
+    
     increment = () => {
         this.setState((prevState) => ({ count: prevState.count + 1 }));
     };
+    
     render() {
-        `return (
+        return (
             <div>
                 <p>Count: {this.state.count}</p>
                 <button onClick={this.increment}>Increment</button>
             </div>
-        );`
+        );
     }
 }
 
 export default Counter;
-        </code></pre></td>
-		<td><pre><code>
+```
+
+#### Hook 사용 코드
+```js
 import React, { useState, useEffect } from 'react';
 
 const Counter = () => {
-const [count, setCount] = useState(0);
-    useEffect(() => {
-        // 컴포넌트가 마운트될 때 실행
-        console.log('Counter mounted');
-        return () => {
-            // 컴포넌트가 언마운트될 때 실행
-            console.log('Counter will unmount');
+    const [count, setCount] = useState(0);
+        useEffect(() => {
+            // 컴포넌트가 마운트될 때 실행
+            console.log('Counter mounted');
+            return () => {
+                // 컴포넌트가 언마운트될 때 실행
+                console.log('Counter will unmount');
+            };
+        }, []); // 빈 배열을 전달하여 마운트될 때만 실행
+    
+        useEffect(() => {
+            // 상태가 업데이트될 때 실행
+            console.log(`Count updated to: ${count}`);
+        }, [count]); // count가 변경될 때만 실행
+        const increment = () => {
+            setCount((prevCount) => prevCount + 1);
         };
-    }, []); // 빈 배열을 전달하여 마운트될 때만 실행
-    useEffect(() => {
-        // 상태가 업데이트될 때 실행
-        console.log(`Count updated to: ${count}`);
-    }, [count]); // count가 변경될 때만 실행
-    const increment = () => {
-        setCount((prevCount) => prevCount + 1);
-    };
-    `return (
-        <div>
-            <p>Count: {count}</p>
-            <button onClick={increment}>Increment</button>
-        </div>
-    );`
+        
+        return (
+            <div>
+                <p>Count: {count}</p>
+                <button onClick={increment}>Increment</button>
+            </div>
+        );
 };
 
 export default Counter;
+```
 
-</code></pre></td>
-    </tr>
-    <tr>
-        <td>상태관리 </td>
-        <td>this.state와 this.setState를 사용하여 상태 관리</td>
-        <td> useState를 사용하여 상태 관리</td>
-    </tr>
-    <tr>
-        <td> 생명주기 메서드 </td>
-        <td> componentDidMount, componentDidUpdate, componentWillUnmount 등의 메서드를 사용해야 한다.</td>
-        <td> useEffect를 사용하여 동일한 기능을 수행할 수 있으며, 의존성 배열을 통해 제어할 수 있다. </td>
-    </tr>
-</table>
+|| 상태 관리 | 생명 주기 메서드                                                                         |
+|--|--|-----------------------------------------------------------------------------------|
+| Class |`this.state`와 `this.setState`를 사용하여 상태 관리| `componentDidMount`, `componentDidUpdate`, `componentWillUnmount` 등의 메서드를 사용해야 함  |
+| Hook  |`useState`를 사용하여 상태 관리       | `useEffect`를 사용하여 동일한 기능을 수행할 수 있으며, 의존성 배열을 통해 제어할 수 있음                          |
+
 
 
 Class로 구현한 코드와 비교를 해보았다. Hook 을 도입한 코드는 코드도 간결해지고, 가독성도 더 좋아졌다. Class 로 구현을 하게 되면 기능을 추가할 때 구조가 복잡하여 기능 추가가 쉽지 않다. 그러니까, 리액트에서 Hook을 도입한 이유에 대해 글로 정리해보자면
