@@ -40,7 +40,7 @@ GitHub Actions 상에서 CI/CD는 yaml 파일을 통해 이루어진다. 그렇�
 ```
 위 파일을 루트 디렉토리에 만들거나, GitHub의 해당 Repository의 Actinos 탭에서 직접 만들 수 있다!
 
-<img alt="img_1.png" src="img_1.png"/>
+<img alt="img_1.png" src="https://velog.velcdn.com/images/gardener/post/e9d60cf5-d10f-416e-b0fb-249b5f8ae037/image.png"/>
 
 아래 파일은 우리 레포지토리로 테스트한 파일이 아니라, 설명을 위한 기본 구조 예시이다.
 
@@ -107,12 +107,12 @@ jobs:
 
 ```
 
-<img alt="img_2.png" src="img_2.png"/>
+<img alt="img_2.png" src="https://velog.velcdn.com/images/gardener/post/880c6c97-ccf8-4142-b8f5-b7fbc476f24c/image.png"/>
 
 실패한 모습이 보였다. 사실 실패는 당연함, 우린 신경써서 readme 양식을 지키고 있지 않기 때문..
 해당 X 표시를 눌러서 들어가보면 어느 파일에서 실패했는지도 알 수 있다.
 
-<img alt="img_3.png" src="img_3.png"/>
+<img alt="img_3.png" src="https://velog.velcdn.com/images/gardener/post/cd0efefb-de33-436c-8466-e20c9eddd3eb/image.png"/>
 
 해당 파일을 확인하면 약 3700개 분량의 markdownlint 오류를 확인해볼 수 있다 ㅎ....
 
