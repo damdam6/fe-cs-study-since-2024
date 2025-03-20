@@ -20,6 +20,12 @@
 | week 16 |       드래그앤드롭 구현하기       |      ✅      |     ✅      |
 | week 17 |    Javascript 코딩테스트 대비     |      ✅      |     ✅      |
 | week 18 |       NEXT.JS 페이지 라우팅       |      ✅      |     ✅      |
-| week 19 |                PWA                |      ✅      |             |
+| week 19 |                PWA                |      ✅      |     ✅      |
+| week 20 |              PWA실습              |      ✅      |     ✅      |
+| week 21 |            PWA실습(2)             |      ✅      |     ✅      |
+| week 22 |              NextJS               |      ✅      |     ✅      |
+| week 23 |        Next Server Action         |      ✅      |     ✅      |
+| week 24 |         Server Component          |      ✅      |     ✅      |
+| week 25 |        Server Component(2)        |      ✅      |             |
 
 > 완료시 ✅
