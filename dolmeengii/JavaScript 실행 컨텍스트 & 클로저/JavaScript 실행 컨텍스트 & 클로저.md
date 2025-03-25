@@ -52,7 +52,7 @@ ECMAScript 에서 소스코드는 4가지 타입으로 구분되며, 각 타입�
 - 실행 컨텍스트가 관리하는 스코프에서 실행에 필요한 정보(변수/함수의 참조) 검색 및 취득
 - 변수 값의 변경 등 소스코드의 실행 결과를 실행 컨텍스트가 관리하는 스코프에 등록
 
-![img](./images/소스코드 평가 및 실행.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/60436d4415229d72418699f5ef62c559f0c5d7a4/dolmeengii/JavaScript%20%EC%8B%A4%ED%96%89%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%26%20%ED%81%B4%EB%A1%9C%EC%A0%80/images/%EC%86%8C%EC%8A%A4%EC%BD%94%EB%93%9C%20%ED%8F%89%EA%B0%80%20%EB%B0%8F%20%EC%8B%A4%ED%96%89.png)
 
 
 <br>
@@ -105,7 +105,7 @@ outer();
 #### 🔹 렉시컬 환경이란?
 렉시컬 환경 `Lexical Environment`은 식별자와 식별자에 바인딩된 값, 그리고 상위 스코프에 대한 참조를 기록하는 자료구조로 실행 컨텍스트를 구성하는 컴포넌트이다. 렉시컬 환경은 스코프와 식별자를 관리한다.
 
-![img](./images/lexical.png)
+![img](https://github.com/dolmeengii/fe-cs-study/blob/60436d4415229d72418699f5ef62c559f0c5d7a4/dolmeengii/JavaScript%20%EC%8B%A4%ED%96%89%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%26%20%ED%81%B4%EB%A1%9C%EC%A0%80/images/lexical.png)
 
 렉시컬 환경은 키와 값을 갖는 객체 형태의 스코프를 생성하여 식별자를 키로 등록하고 식별자에 바인딩된 값을 관리한다.
 
